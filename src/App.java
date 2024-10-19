@@ -6,39 +6,54 @@ class Personaje {
     int fuerza;
     int velocidad;
     int vida_hp;
+    int ataque_principal;
+    int ataque_secundario;
+    int ataque_final;
 
     // Definir constructor
     public Personaje(
             String nombre,
             int fuerza,
             int velocidad,
-            int vida_hp) {
+            int vida_hp,
+            int ataque_principal,
+            int ataque_secundario,
+            int ataque_final) {
         this.nombre = nombre;
         this.fuerza = fuerza;
         this.velocidad = velocidad;
         this.vida_hp = vida_hp;
+        this.ataque_principal=ataque_principal;
+        this.ataque_secundario=ataque_secundario;
+        this.ataque_final=ataque_final;
     }
 }
 
 class SuperHero extends Personaje {
     // definir el constructor
     public SuperHero(
-        String nombre,
-        int fuerza,
-        int velocidad,
-        int vida_hp){
-            super(nombre, fuerza, velocidad, vida_hp);
+            String nombre,
+            int fuerza,
+            int velocidad,
+            int vida_hp,
+            int ataque_principal,
+            int ataque_secundario,
+            int ataque_final){
+            super(nombre, fuerza, velocidad, vida_hp, ataque_principal, ataque_secundario, ataque_final);
     }
 }
 
 class Villano extends Personaje {
     // definir el constructor
     public Villano(
-        String nombre,
-        int fuerza,
-        int velocidad,
-        int vida_hp){
-            super(nombre, fuerza, velocidad, vida_hp);
+            String nombre,
+            int fuerza,
+            int velocidad,
+            int vida_hp,
+            int ataque_principal,
+            int ataque_secundario,
+            int ataque_final){
+            super(nombre, fuerza, velocidad, vida_hp, ataque_principal, ataque_secundario, ataque_final);
     }
 }
 // Método para obtener el nombre
@@ -156,7 +171,7 @@ public class App {
                     }                   
                 }
                 if (codeSeleccion == 1) {                    
-                    SuperHero speedFlash = new SuperHero("SPEED FLASH", 70, 95, 60);
+                    SuperHero selectedHero = new SuperHero("SPEED FLASH", 70, 95, 60,28,42,70);
                     isSeleccion = false;
                 }                          
                 break;
@@ -193,7 +208,7 @@ public class App {
                     }                   
                 }
                 if (codeSeleccion == 1) {                    
-                    SuperHero ironHammer = new SuperHero("IRON HAMMER", 70, 95, 60);
+                    SuperHero selectedHero = new SuperHero("IRON HAMMER", 70, 95, 60,36,54,90);
                     isSeleccion = false;
                 }           
                     break;
@@ -230,7 +245,7 @@ public class App {
                     }                   
                 }
                 if (codeSeleccion == 1) {                    
-                    SuperHero silentShadow = new SuperHero("SILENT SHADOW", 65, 85, 70);
+                    SuperHero selectedHero = new SuperHero("SILENT SHADOW", 65, 85, 70,26,39,65);
                     isSeleccion = false;
                 }                    
                     break;
@@ -267,7 +282,7 @@ public class App {
                     }                   
                 }
                 if (codeSeleccion == 1) {                    
-                    SuperHero stoneColossus= new SuperHero("STONE COLOSSUS", 95, 40, 100);
+                    SuperHero selectedHero= new SuperHero("STONE COLOSSUS", 95, 40, 100,38,57,95);
                     isSeleccion = false;
                 }   
                     break;
@@ -304,7 +319,7 @@ public class App {
                     }                   
                 }
                 if (codeSeleccion == 1) {                    
-                    SuperHero radiantFlash= new SuperHero("RADIANT FLASH", 80, 75, 65);
+                    SuperHero selectedHero= new SuperHero("RADIANT FLASH", 80, 75, 65,32,48,80);
                     isSeleccion = false;
                 }  
                     break;
