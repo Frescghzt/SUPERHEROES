@@ -3,13 +3,16 @@
 
 
 import java.util.Scanner;
-
+import java.util.Random;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         //creamos un Scanner
         Scanner input = new Scanner(System.in);
+
+        //creamos el random
+        Random rand = new Random();
 
         //bienvenida al programa
         System.out.print("\033[2J");
@@ -137,7 +140,7 @@ public class App {
 
                         //si es valida elige a speed flash
                         if (codeSeleccion == 1) {                    
-                            selectedHero = new SuperHero("SPEED FLASH", 70, 95, 60,28,42,70,0);
+                            selectedHero = new SuperHero("SPEED FLASH", 70, 95, 60,"Golpe Relámpago",28,"Torbellino Veloz",42,"Explosión Sónica",70,0);
 
                             //sale del bucle
                             isSeleccion = false;
@@ -186,7 +189,7 @@ public class App {
                         //si es valida elige si usar el personaje
 
                         if (codeSeleccion == 1) {                    
-                            selectedHero = new SuperHero("IRON HAMMER", 70, 95, 60,36,54,90,0);
+                            selectedHero = new SuperHero("IRON HAMMER", 70, 95, 60,"Martillazo de Acero",36,"Golpe Triturador",54,"Impacto Colosal",90,0);
 
                             //si usa el personaje sale del bucle
                             isSeleccion = false;
@@ -236,7 +239,7 @@ public class App {
 
                         //si es valida elige si usar el personaje
                         if (codeSeleccion == 1) {                    
-                            selectedHero = new SuperHero("SILENT SHADOW", 65, 85, 70,26,39,65,0);
+                            selectedHero = new SuperHero("SILENT SHADOW", 65, 85, 70,"Corte Silencioso",26,"Emboscada Mortal",39,"Desgarro de las Sombras",65,0);
 
                             //si elige el personaje sale del bucle
                             isSeleccion = false;
@@ -286,7 +289,7 @@ public class App {
 
                         //si es valida elige si usar el personaje
                         if (codeSeleccion == 1) {                    
-                        selectedHero= new SuperHero("STONE COLOSSUS", 95, 40, 100,38,57,95,0);
+                        selectedHero= new SuperHero("STONE COLOSSUS", 95, 40, 100,"Golpe de Roca",38,"Terremoto",57,"Avalancha Imparable",95,0);
 
                             //si usa el personaje sale del bucle
                             isSeleccion = false;
@@ -335,7 +338,7 @@ public class App {
 
                         //si es valida decide si usar el personage
                         if (codeSeleccion == 1) {                    
-                        selectedHero= new SuperHero("RADIANT FLASH", 80, 75, 65,32,48,80,0);
+                        selectedHero= new SuperHero("RADIANT FLASH", 80, 75, 65,"Rayo Luminoso",32,"Destello Radiante",48,"Explosión Solar",80,0);
 
                             //si usa el personaje sale del bucle
                             isSeleccion = false;
@@ -404,20 +407,22 @@ public class App {
                 //creamos llos villanos
 
                 //Shadow crawler
-                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 50, 70, 60, 20, 30, 50, 0);
+                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 50, 70, 60,"Golpe de Sombra", 20,"Ataque Oscuro", 30,"Emboscada Nocturna", 50, 0);
                 
                 //Iron Fist
-                Villano ironFist = new Villano("IRON FIST", 65, 60, 80, 26, 39, 65, 0);
+                Villano ironFist = new Villano("IRON FIST", 65, 60, 80,"Puño de Hierro", 26,"Impacto Aplastante", 39,"Golpe Destructor", 65, 0);
                 
                 //Toxic Viper
-                Villano toxicViper = new Villano("TOXIC VIPER", 75, 55, 100, 30, 45, 75, 0);
+                Villano toxicViper = new Villano("TOXIC VIPER", 75, 55, 100,"Mordida Tóxica", 30,"Chorro Venenoso", 45,"Nube Letal", 75, 0);
                 
                 //Dark Sorcerer
-                Villano darkSorcerer = new Villano("DARK SORCERER", 85, 50, 120, 34, 51, 85, 0);
+                Villano darkSorcerer = new Villano("DARK SORCERER", 85, 50, 120,"Bola de Fuego Oscura", 34,"Rayo Maligno", 51,"Invocación de la Oscuridad", 85, 0);
                 
                 //Oblivion Lord (Jefe Final)
-                Villano oblivion = new Villano("OBLIVION", 100, 45, 150, 40, 60, 100, 0);
+                Villano oblivion = new Villano("OBLIVION", 100, 45, 150,"Garra del Vacío", 40,"Onda de Caos", 60,"Apocalipsis Oscuro", 100, 0);
                 
+                //definimos la carga de los poderes
+                charge carga = new charge(0, 30, 60);
                 //lore
                 while (true) {
                     System.out.println("Un antiguo mal ha despertado y la oscuridad comienza a extenderse por el mundo. Los villanos más");
@@ -464,7 +469,49 @@ public class App {
                     }
                     
                 }
+                System.out.println("\033[2J");
 
+                //batalla shadow
+                System.out.println("has iniciado una batalla con Shadow crawler");
+                int codeAccion;
+                boolean batalla = true;
+                while (batalla) {
+                    System.out.println("¿Que deceas hacer?");
+                    System.out.println("1. Atacar");
+                    System.out.println("2. Cargar Energia");
+                    System.out.println("3. Recuperarse");
+                    while (true) {
+                        try{
+                            System.out.println("Ingrese el codigo de la accion que decea realizar");
+                            codeAccion = Integer.parseInt(input.nextLine());
+                            if (codeAccion < 1 || codeAccion > 3) {
+                                System.out.println("codigo invalido");                            
+                            }else{
+                                break;
+                            }
+                        }catch(NumberFormatException error){
+                            System.out.println("codigo invalido");
+                        }
+                    }
+                    switch (codeAccion) {
+                        case 1:
+                            System.out.println("Que ataque decea usar");
+                            System.out.println("1. "+selectedHero.nombrePrincipal+" es necesario una carga de "+carga.chargePrincipal);
+                            System.out.println("2. "+selectedHero.nombreSecundario+" es necesario una carga de "+carga.chargeSecundario);
+                            System.out.println("3. "+selectedHero.nombreFinal+" es necesario una carga de "+carga.chargeFinal);
+                            System.out.println("Su carga es de "+selectedHero.overload);
+                            break;
+                        case 2:
+                            
+                            break;
+                        case 3:
+                            
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
 
                 break;
             //configuracion
