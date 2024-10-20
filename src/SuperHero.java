@@ -1,39 +1,39 @@
 public class SuperHero {
-    String nombre;
-    int fuerza;
-    int velocidad;
-    int vida_hp;
-    String nombrePrincipal;
-    int ataque_principal;
-    String nombreSecundario;
-    int ataque_secundario;
-    String nombreFinal;
-    int ataque_final;
-    int overload;
+    String Snombre;
+    int Sfuerza;
+    int Svelocidad;
+    int Svida_hp;
+    String SnombrePrincipal;
+    int Sataque_principal;
+    String SnombreSecundario;
+    int Sataque_secundario;
+    String SnombreFinal;
+    int Sataque_final;
+    int Soverload;
 
     public SuperHero(
-        String nombre,
-        int fuerza,
-        int velocidad,
-        int vida_hp,
-        String nombrePrincipal,
-        int ataque_principal,
-        String nombreSecundario,
-        int ataque_secundario,
-        String nombreFinal,
-        int ataque_final,
-        int overload) {
-        this.nombre = nombre;
-        this.fuerza = fuerza;
-        this.velocidad = velocidad;
-        this.vida_hp = vida_hp;
-        this.nombrePrincipal = nombrePrincipal;
-        this.ataque_principal = ataque_principal;
-        this.nombreSecundario = nombreSecundario;
-        this.ataque_secundario = ataque_secundario;
-        this.nombreFinal = nombreFinal;
-        this.ataque_final = ataque_final;
-        this.overload = overload;
+        String Snombre,
+        int Sfuerza,
+        int Svelocidad,
+        int Svida_hp,
+        String SnombrePrincipal,
+        int Sataque_principal,
+        String SnombreSecundario,
+        int Sataque_secundario,
+        String SnombreFinal,
+        int Sataque_final,
+        int Soverload) {
+        this.Snombre = Snombre;
+        this.Sfuerza = Sfuerza;
+        this.Svelocidad = Svelocidad;
+        this.Svida_hp = Svida_hp;
+        this.SnombrePrincipal = SnombrePrincipal;
+        this.Sataque_principal = Sataque_principal;
+        this.SnombreSecundario = SnombreSecundario;
+        this.Sataque_secundario = Sataque_secundario;
+        this.SnombreFinal = SnombreFinal;
+        this.Sataque_final = Sataque_final;
+        this.Soverload = Soverload;
     }
 }
 
