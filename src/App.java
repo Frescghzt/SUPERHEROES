@@ -726,6 +726,1065 @@ public class App {
                 if(gameOver == true){
                     break;
                 }
+                
+                //dialogo derrota villano
+                System.out.println("-NOOOO, COMO ES POSIBLE QUE ME HALLAS DERROTADO-");
+                System.out.println("-Habla de una ves donde se encuentra "+oblivionLord.nombre);
+                System.out.println("-JAJAJAJAJAJA, estas loco si crees que lo vas a derrotar, es mas te esta esperando en");
+                System.out.println( "la montaña donde se libero el sello, pero para llegar a el tendras que derrotar a los demas y son-");
+                System.out.println("mucho mas fuerte que tu-");
+                System.out.println("-Eso lo veremos-");
+                System.out.println("Despues de decir esto "+selectedHero.Snombre+" Procede a acabar con la vida del villano");
+                
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
+                    System.out.println("codigo no valido");
+                }
+                
+                //segundo villano
+                System.out.println("luego de prepararse correctamente "+selectedHero.Snombre+" se dirige a la montaña donde alguna");
+                System.out.println("vez estos villanos fueron pricioneros, no paso mucho tiemo desde que comenzo a explorar la montaña");
+                System.out.println("que se encontro a "+ironFist.nombre+" este parecia una persona realmente normal y "+selectedHero.Snombre);
+                System.out.println("incluso llego a pensar que era un rehen, pero a penas se acerco a la persona a preguntarle si");
+                System.out.println("estaba bien este se quito la tunica que lo cubria y dejo ver en su cuerpo grandes cantidades de hierro");
+                
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
+                    System.out.println("codigo no valido");
+                }
+
+                System.out.println("\033[2J");
+
+                //se pone tensa la historia
+                System.out.println("-supe que derrotaste a "+shadowCrawler.nombre+" nunca crei que duraria mucho");
+                System.out.println("Lo que me sorprende es que muriera en manos de una persona tan debil como tu-");
+                System.out.println(selectedHero.Snombre+" se pone en pocision de ataque y le dice");
+                System.out.println("-y a ti te espera el mismo destino-");
+
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
+                    System.out.println("codigo no valido");
+                }
+                System.out.println("\033[2J");
+                
+                //batalla iron
+                System.out.println("Has iniciado una batalla con "+ironFist.nombre);
+                batalla = true;
+                codeAtaque = 0;
+                //gameover
+                gameOver = false;
+                
+                //se va a repetir la batalla hasta que alguno de los dos muera
+                while (batalla) {
+
+                    //menu de batalla
+                    System.out.println("¿Que deceas hacer?");
+                    System.out.println("1. Atacar");
+                    System.out.println("2. Cargar Energia");
+                    System.out.println("3. Recuperarse");
+
+                    //confirma que la entrada es valida
+                    while (true) {
+                        try{
+                            System.out.println("Ingrese el codigo de la accion que decea realizar");
+                            codeAccion = Integer.parseInt(input.nextLine());
+                            if (codeAccion < 1 || codeAccion > 3) {
+                                System.out.println("codigo invalido");                            
+                            }else{
+                                break;
+                            }
+                        }catch(NumberFormatException error){
+                            System.out.println("codigo invalido");
+                        }
+                    }
+                    //definimos la capacidad de  esquivar del heroe 
+                    isHeroEsquiva = esquiva.isEsquivar(rand, selectedHero.Svelocidad);
+
+                    //definimos la capacidad de esquivar de shadow
+                    isIronEsquiva = esquiva.isEsquivar(rand, ironFist.velocidad);
+                    
+                    //definimos la carga del poder
+                    thecharge= charge.carga(rand, 40);
+
+                    //definimos la recuperacion de vida
+                    sanacion = sanar.heal(rand, 40);
+                    
+                    //definimos el ataque
+                    respuesta =atack.respuesta(rand,10);
+
+                    //contador para que no robe mas de un turno
+                    int contador = 0;
+
+
+                    //dependiendo de la eleccion decide que accion tomar                    
+                    switch (codeAccion) {
+                        //atacar
+                        case 1:
+
+                        //menu de ataque
+                            System.out.println("Que ataque decea usar");
+                            System.out.println("1. "+selectedHero.SnombrePrincipal+" es necesario una carga de "+carga.chargePrincipal);
+                            System.out.println("2. "+selectedHero.SnombreSecundario+" es necesario una carga de "+carga.chargeSecundario);
+                            System.out.println("3. "+selectedHero.SnombreFinal+" es necesario una carga de "+carga.chargeFinal);
+                            System.out.println("Recuerda que si eliges un poder y no tienes la carga necesaria pierdes turno");
+                            System.out.println("Su carga es de "+selectedHero.Soverload);
+
+                            //confirma que la entrada sea valida
+                        while (true) {  
+                            try{
+                                System.out.println("");
+                                System.out.println("Ingrese el codigo de la accion que desea realizar");
+                                codeAtaque = Integer.parseInt(input.nextLine());
+                                if (codeAtaque < 1 || codeAtaque > 3) {
+                                    System.out.println("Ingrese un codigo valido");
+                                }else{
+                                    break;
+                                }                           
+                            }catch(NumberFormatException error){
+                                System.out.println("");
+                                System.out.println("ingrese un codigo valido");
+                            }
+                        }
+                        switch (codeAtaque) {
+                            
+                            //Ataque principal
+                            case 1:
+                                if (selectedHero.Soverload >= carga.chargePrincipal) {
+                                    if (isIronEsquiva == true) {
+                                        System.out.println("");
+                                        System.out.println(ironFist.nombre+" logro esquivar el golpe ");
+                                    }else{
+                                        System.out.println("");
+                                        System.out.println(ironFist.nombre+" recibio el golpe");
+                                        ironFist.vida_hp-=selectedHero.Sataque_principal;
+                                    }
+                                }else{
+                                    System.out.println("");
+                                    System.out.println("Carga insuficiente, pierdes turno");
+                                }
+                                break;
+                            
+                            // Ataque secundario
+                            case 2:
+                            if (selectedHero.Soverload >= carga.chargeSecundario) {
+                                if (isIronEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(ironFist.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(ironFist.nombre+" recibio el golpe");
+                                    ironFist.vida_hp-=selectedHero.Sataque_secundario;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                            break;
+
+
+                            //Ataque final
+                            case 3:
+                                if (selectedHero.Soverload >= carga.chargeFinal) {
+                                    if (isIronEsquiva == true) {
+                                        System.out.println("");
+                                        System.out.println(ironFist.nombre+" logro esquivar el golpe ");
+                                    }else{
+                                        System.out.println("");
+                                        System.out.println(ironFist.nombre+" recibio el golpe");
+                                        ironFist.vida_hp-=selectedHero.Sataque_final;
+                                    }
+                                }else{
+                                    System.out.println("");
+                                    System.out.println("Carga insuficiente, pierdes turno");
+                                }
+                            break;
+                        }
+                        break;
+                        //cargar energia    
+                        case 2:
+                            selectedHero.Soverload += thecharge; 
+                            System.out.println("");  
+                            System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                            break;
+                        //recuperarse 
+                        case 3:
+                            selectedHero.Svida_hp += sanacion;
+                            System.out.println("");
+                            System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
+                            break;
+                    }
+                    System.out.println("Ahora es turno de que "+ironFist.nombre+" ataque");
+                    do {
+                        //segun el numero aleatrio deside el ataque
+                        if (respuesta <= 2) {
+                            System.out.println(ironFist.nombre+" lanza su ataque final: "+ironFist.nombreFinal);
+                            if (isHeroEsquiva == true) {
+                                System.out.println("");
+                                System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                            }else{
+                                System.out.println("");
+                                System.out.println(selectedHero.Snombre+" recibio el golpe");
+                                selectedHero.Svida_hp-=ironFist.ataque_final;
+                            }
+                        }else if (respuesta > 2 && respuesta <= 5 ) {
+                            System.out.println(ironFist.nombre+" lanza "+ironFist.nombreSecundario);
+                            if (isHeroEsquiva == true) {
+                                System.out.println("");
+                                System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                            }else{
+                                System.out.println("");
+                                System.out.println(selectedHero.Snombre+" recibio el golpe");
+                                selectedHero.Svida_hp-=ironFist.ataque_secundario;
+                            }
+                        }else{
+                            System.out.println(ironFist.nombre+" lanza "+ironFist.nombrePrincipal);
+                            if (isHeroEsquiva == true) {
+                                System.out.println("");
+                                System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                            }else{
+                                System.out.println("");
+                                System.out.println(selectedHero.Snombre+" recibio el golpe");
+                                selectedHero.Svida_hp-=ironFist.ataque_principal;
+                            }
+                        }
+                        
+                        //la trampa verdadero
+                        laTrampa = true; 
+                        if (laTrampa == true) {
+                            contador++;
+                        }
+                        //definimos la trampa 
+                        laTrampa = trampa.isTrampa(rand);
+                        
+                            
+                        
+                        if (contador>1) {
+                            laTrampa = false;
+                        }
+                        if (laTrampa == true) {
+                            System.out.println(ironFist.nombre+" te ha robado tu turno");
+                        }
+                        System.out.println("Estadisticas del heroe:");
+                        System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
+                        System.out.println("");
+                        System.out.println("Estadisticas del villano");
+                        System.out.println("vida: "+ironFist.vida_hp);
+                        System.out.println("");
+                        
+                    } while (laTrampa);
+                    if (ironFist.vida_hp <= 0) {
+                        System.out.println("has ganado");
+                        batalla = false;
+                    }else if (selectedHero.Svida_hp <=0) {
+                        System.out.println("Has perdido");
+                        gameOver = true;
+                        batalla = false;}
+                    }
+                if(gameOver == true){
+                    break;
+                }
+
+                //dialogo final iron
+                System.out.println("-JAJAAJJAJAJAJ, me has vencido felicidades, disfruta tu vistoria mientras puedas, porque de ");
+                System.out.println("ahora en adelante no te va a tocar tan facil-");
+                System.out.println(selectedHero.Snombre+" no le quedo otra alternativa mas que verlo morir. ");
+                
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
+                    System.out.println("codigo no valido");
+                }
+                System.out.println("\033[2J");
+
+                //caminando por la montaña
+                System.out.println("despues de un rato explorando la montaña logro a lo lejos ver una fabrica en muy mal estado");
+                System.out.println("la curiosidad le gano y decidio acercarce a esta fabrica presuntamente abandonada");
+                System.out.println("al entrar en esta se dio cuenta que habian muchos restos de desperdicios toxicos por todos lados");
+                System.out.println("ignorando este detallo decidio explorar la fabrica, esto sin excito ya que no logro encontrar nada util");
+                System.out.println("pero saliendo de la fabrica se encontro un gran tanque con desperdicios toxicos ");
+                System.out.println("del cual logro escuchar una voz ");
+                System.out.println("-Llevo dias absorviendo las toxinas de este tanque con un unico objetivo, ser el mas poderoso");
+                System.out.println("y sumir este mundo en desperdicios toxicos,¿un mundo perfecto no te parece?");
+                System.out.println("pero para que mi sueño se haga realidad primero debo acabar contigo asi que preparate-");
+                
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
+                    System.out.println("codigo no valido");
+                }
+            System.out.println("\033[2J");
+            
+            //batalla toxic
+            System.out.println("Has iniciado una batalla con "+toxicViper.nombre);
+            batalla = true;
+            codeAtaque = 0;
+            //gameover
+            gameOver = false;
+            
+            //se va a repetir la batalla hasta que alguno de los dos muera
+            while (batalla) {
+
+                //menu de batalla
+                System.out.println("¿Que deceas hacer?");
+                System.out.println("1. Atacar");
+                System.out.println("2. Cargar Energia");
+                System.out.println("3. Recuperarse");
+
+                //confirma que la entrada es valida
+                while (true) {
+                    try{
+                        System.out.println("Ingrese el codigo de la accion que decea realizar");
+                        codeAccion = Integer.parseInt(input.nextLine());
+                        if (codeAccion < 1 || codeAccion > 3) {
+                            System.out.println("codigo invalido");                            
+                        }else{
+                            break;
+                        }
+                    }catch(NumberFormatException error){
+                        System.out.println("codigo invalido");
+                    }
+                }
+                //definimos la capacidad de  esquivar del heroe 
+                isHeroEsquiva = esquiva.isEsquivar(rand, selectedHero.Svelocidad);
+
+                //definimos la capacidad de esquivar de shadow
+                isToxicEsquiva = esquiva.isEsquivar(rand, ironFist.velocidad);
+                
+                //definimos la carga del poder
+                thecharge= charge.carga(rand, 40);
+
+                //definimos la recuperacion de vida
+                sanacion = sanar.heal(rand, 40);
+                
+                //definimos el ataque
+                respuesta =atack.respuesta(rand,10);
+
+                //contador para que no robe mas de un turno
+                int contador = 0;
+
+
+                //dependiendo de la eleccion decide que accion tomar                    
+                switch (codeAccion) {
+                    //atacar
+                    case 1:
+
+                    //menu de ataque
+                        System.out.println("Que ataque decea usar");
+                        System.out.println("1. "+selectedHero.SnombrePrincipal+" es necesario una carga de "+carga.chargePrincipal);
+                        System.out.println("2. "+selectedHero.SnombreSecundario+" es necesario una carga de "+carga.chargeSecundario);
+                        System.out.println("3. "+selectedHero.SnombreFinal+" es necesario una carga de "+carga.chargeFinal);
+                        System.out.println("Recuerda que si eliges un poder y no tienes la carga necesaria pierdes turno");
+                        System.out.println("Su carga es de "+selectedHero.Soverload);
+
+                        //confirma que la entrada sea valida
+                    while (true) {  
+                        try{
+                            System.out.println("");
+                            System.out.println("Ingrese el codigo de la accion que desea realizar");
+                            codeAtaque = Integer.parseInt(input.nextLine());
+                            if (codeAtaque < 1 || codeAtaque > 3) {
+                                System.out.println("Ingrese un codigo valido");
+                            }else{
+                                break;
+                            }                           
+                        }catch(NumberFormatException error){
+                            System.out.println("");
+                            System.out.println("ingrese un codigo valido");
+                        }
+                    }
+                    switch (codeAtaque) {
+                        
+                        //Ataque principal
+                        case 1:
+                            if (selectedHero.Soverload >= carga.chargePrincipal) {
+                                if (isToxicEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(toxicViper.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(toxicViper.nombre+" recibio el golpe");
+                                    toxicViper.vida_hp-=selectedHero.Sataque_principal;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                            break;
+                        
+                        // Ataque secundario
+                        case 2:
+                        if (selectedHero.Soverload >= carga.chargeSecundario) {
+                            if (isToxicEsquiva == true) {
+                                System.out.println("");
+                                System.out.println(toxicViper.nombre+" logro esquivar el golpe ");
+                            }else{
+                                System.out.println("");
+                                System.out.println(toxicViper.nombre+" recibio el golpe");
+                                toxicViper.vida_hp-=selectedHero.Sataque_secundario;
+                            }
+                        }else{
+                            System.out.println("");
+                            System.out.println("Carga insuficiente, pierdes turno");
+                        }
+                        break;
+
+
+                        //Ataque final
+                        case 3:
+                            if (selectedHero.Soverload >= carga.chargeFinal) {
+                                if (isToxicEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(toxicViper.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(toxicViper.nombre+" recibio el golpe");
+                                    toxicViper.vida_hp-=selectedHero.Sataque_final;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                        break;
+                    }
+                    break;
+                    //cargar energia    
+                    case 2:
+                        selectedHero.Soverload += thecharge; 
+                        System.out.println("");  
+                        System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                        break;
+                    //recuperarse 
+                    case 3:
+                        selectedHero.Svida_hp += sanacion;
+                        System.out.println("");
+                        System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
+                        break;
+                }
+                System.out.println("Ahora es turno de que "+toxicViper.nombre+" ataque");
+                do {
+                    //segun el numero aleatrio deside el ataque
+                    if (respuesta <= 2) {
+                        System.out.println(toxicViper.nombre+" lanza su ataque final: "+toxicViper.nombreFinal);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=toxicViper.ataque_final;
+                        }
+                    }else if (respuesta > 2 && respuesta <= 5 ) {
+                        System.out.println(toxicViper.nombre+" lanza "+toxicViper.nombreSecundario);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=toxicViper.ataque_secundario;
+                        }
+                    }else{
+                        System.out.println(toxicViper.nombre+" lanza "+toxicViper.nombrePrincipal);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=toxicViper.ataque_principal;
+                        }
+                    }
+                    
+                    //la trampa verdadero
+                    laTrampa = true; 
+                    if (laTrampa == true) {
+                        contador++;
+                    }
+                    //definimos la trampa 
+                    laTrampa = trampa.isTrampa(rand);
+                    
+                        
+                    
+                    if (contador>1) {
+                        laTrampa = false;
+                    }
+                    if (laTrampa == true) {
+                        System.out.println(toxicViper.nombre+" te ha robado tu turno");
+                    }
+                    System.out.println("Estadisticas del heroe:");
+                    System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
+                    System.out.println("");
+                    System.out.println("Estadisticas del villano");
+                    System.out.println("vida: "+toxicViper.vida_hp);
+                    System.out.println("");
+                    
+                } while (laTrampa);
+                if (toxicViper.vida_hp <= 0) {
+                    System.out.println("has ganado");
+                    batalla = false;
+                }else if (selectedHero.Svida_hp <=0) {
+                    System.out.println("Has perdido");
+                    gameOver = true;
+                    batalla = false;}
+                }
+            if(gameOver == true){
+                break;
+            }
+            System.out.println("\033[2J");
+            System.out.println("-Lograste vencerme, acabaste con la ilusion de mi mundo perfecto, espero que lo que intentes lograr no sea el camino equicado-");
+            System.out.println(selectedHero.Snombre+" sale del lugar despues de cuestionarse la razon por la cual quieren sumir el mundo en oscuridad");
+            //confirma que la entrada sea valida
+            try{
+                System.out.println("");
+                System.out.println("ingrese 1 para continuar");
+                int continuar = Integer.parseInt(input.nextLine());
+                if (continuar == 1) {
+                    break;
+                }else{
+                    System.out.println("codigo no valido");
+                }
+            }catch (NumberFormatException error){
+                System.out.println("");
+                System.out.println("codigo no valido");
+            }
+            System.out.println("\033[2J");
+             
+            //encuentro con dark
+            System.out.println("llegando a la cima de la montaña, la oscuridad comenzo a ser cada ves mas grande y densa");
+            System.out.println("hasta que llego un punto en el cual no podia ni ver sus manos");
+            System.out.println("pero en esa oscuridad se logro escuchar una voz");
+            System.out.println("-De aqui no pasaras a "+oblivionLord.nombre+" no le gustan los intrusos-");
+            System.out.println("despues de eso viste como el lugar se ilumino y lograste ver una mancha negra en el cielo");
+            //confirma que la entrada sea valida
+            try{
+                System.out.println("");
+                System.out.println("ingrese 1 para continuar");
+                int continuar = Integer.parseInt(input.nextLine());
+                if (continuar == 1) {
+                    break;
+                }else{
+                    System.out.println("codigo no valido");
+                }
+            }catch (NumberFormatException error){
+                System.out.println("");
+                System.out.println("codigo no valido");
+            }
+            System.out.println("\033[2J");
+
+            //batalla con dark 
+            System.out.println("Has iniciado una batalla con "+darkSorcerer.nombre);
+            batalla = true;
+            codeAtaque = 0;
+            //gameover
+            gameOver = false;
+            
+            //se va a repetir la batalla hasta que alguno de los dos muera
+            while (batalla) {
+
+                //menu de batalla
+                System.out.println("¿Que deceas hacer?");
+                System.out.println("1. Atacar");
+                System.out.println("2. Cargar Energia");
+                System.out.println("3. Recuperarse");
+
+                //confirma que la entrada es valida
+                while (true) {
+                    try{
+                        System.out.println("Ingrese el codigo de la accion que decea realizar");
+                        codeAccion = Integer.parseInt(input.nextLine());
+                        if (codeAccion < 1 || codeAccion > 3) {
+                            System.out.println("codigo invalido");                            
+                        }else{
+                            break;
+                        }
+                    }catch(NumberFormatException error){
+                        System.out.println("codigo invalido");
+                    }
+                }
+                //definimos la capacidad de  esquivar del heroe 
+                isHeroEsquiva = esquiva.isEsquivar(rand, selectedHero.Svelocidad);
+
+                //definimos la capacidad de esquivar de shadow
+                isDarkEsquiva = esquiva.isEsquivar(rand, darkSorcerer.velocidad);
+                
+                //definimos la carga del poder
+                thecharge= charge.carga(rand, 40);
+
+                //definimos la recuperacion de vida
+                sanacion = sanar.heal(rand, 40);
+                
+                //definimos el ataque
+                respuesta =atack.respuesta(rand,10);
+
+                //contador para que no robe mas de un turno
+                int contador = 0;
+
+
+                //dependiendo de la eleccion decide que accion tomar                    
+                switch (codeAccion) {
+                    //atacar
+                    case 1:
+
+                    //menu de ataque
+                        System.out.println("Que ataque decea usar");
+                        System.out.println("1. "+selectedHero.SnombrePrincipal+" es necesario una carga de "+carga.chargePrincipal);
+                        System.out.println("2. "+selectedHero.SnombreSecundario+" es necesario una carga de "+carga.chargeSecundario);
+                        System.out.println("3. "+selectedHero.SnombreFinal+" es necesario una carga de "+carga.chargeFinal);
+                        System.out.println("Recuerda que si eliges un poder y no tienes la carga necesaria pierdes turno");
+                        System.out.println("Su carga es de "+selectedHero.Soverload);
+
+                        //confirma que la entrada sea valida
+                    while (true) {  
+                        try{
+                            System.out.println("");
+                            System.out.println("Ingrese el codigo de la accion que desea realizar");
+                            codeAtaque = Integer.parseInt(input.nextLine());
+                            if (codeAtaque < 1 || codeAtaque > 3) {
+                                System.out.println("Ingrese un codigo valido");
+                            }else{
+                                break;
+                            }                           
+                        }catch(NumberFormatException error){
+                            System.out.println("");
+                            System.out.println("ingrese un codigo valido");
+                        }
+                    }
+                    switch (codeAtaque) {
+                        
+                        //Ataque principal
+                        case 1:
+                            if (selectedHero.Soverload >= carga.chargePrincipal) {
+                                if (isDarkEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(darkSorcerer.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(darkSorcerer.nombre+" recibio el golpe");
+                                    darkSorcerer.vida_hp-=selectedHero.Sataque_principal;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                            break;
+                        
+                        // Ataque secundario
+                        case 2:
+                        if (selectedHero.Soverload >= carga.chargeSecundario) {
+                            if (isDarkEsquiva == true) {
+                                System.out.println("");
+                                System.out.println(darkSorcerer.nombre+" logro esquivar el golpe ");
+                            }else{
+                                System.out.println("");
+                                System.out.println(darkSorcerer.nombre+" recibio el golpe");
+                                darkSorcerer.vida_hp-=selectedHero.Sataque_secundario;
+                            }
+                        }else{
+                            System.out.println("");
+                            System.out.println("Carga insuficiente, pierdes turno");
+                        }
+                        break;
+
+
+                        //Ataque final
+                        case 3:
+                            if (selectedHero.Soverload >= carga.chargeFinal) {
+                                if (isDarkEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(darkSorcerer.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(darkSorcerer.nombre+" recibio el golpe");
+                                    darkSorcerer.vida_hp-=selectedHero.Sataque_final;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                        break;
+                    }
+                    break;
+                    //cargar energia    
+                    case 2:
+                        selectedHero.Soverload += thecharge; 
+                        System.out.println("");  
+                        System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                        break;
+                    //recuperarse 
+                    case 3:
+                        selectedHero.Svida_hp += sanacion;
+                        System.out.println("");
+                        System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
+                        break;
+                }
+                System.out.println("Ahora es turno de que "+darkSorcerer.nombre+" ataque");
+                do {
+                    //segun el numero aleatrio deside el ataque
+                    if (respuesta <= 2) {
+                        System.out.println(darkSorcerer.nombre+" lanza su ataque final: "+darkSorcerer.nombreFinal);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=darkSorcerer.ataque_final;
+                        }
+                    }else if (respuesta > 2 && respuesta <= 5 ) {
+                        System.out.println(darkSorcerer.nombre+" lanza "+darkSorcerer.nombreSecundario);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=darkSorcerer.ataque_secundario;
+                        }
+                    }else{
+                        System.out.println(darkSorcerer.nombre+" lanza "+darkSorcerer.nombrePrincipal);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=darkSorcerer.ataque_principal;
+                        }
+                    }
+                    
+                    //la trampa verdadero
+                    laTrampa = true; 
+                    if (laTrampa == true) {
+                        contador++;
+                    }
+                    //definimos la trampa 
+                    laTrampa = trampa.isTrampa(rand);
+                    
+                        
+                    
+                    if (contador>1) {
+                        laTrampa = false;
+                    }
+                    if (laTrampa == true) {
+                        System.out.println(darkSorcerer.nombre+" te ha robado tu turno");
+                    }
+                    System.out.println("Estadisticas del heroe:");
+                    System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
+                    System.out.println("");
+                    System.out.println("Estadisticas del villano");
+                    System.out.println("vida: "+darkSorcerer.vida_hp);
+                    System.out.println("");
+                    
+                } while (laTrampa);
+                if (darkSorcerer.vida_hp <= 0) {
+                    System.out.println("has ganado");
+                    batalla = false;
+                }else if (selectedHero.Svida_hp <=0) {
+                    System.out.println("Has perdido");
+                    gameOver = true;
+                    batalla = false;}
+                }
+            if(gameOver == true){
+                break;
+            }
+
+            //ultimo dialogo dark
+            System.out.println("\033[2J");
+            System.out.println("-Espero que estes preparado, HAS DESPERTADO AL JEFE-");
+            System.out.println("Escuchas un gran estruendo detras tullo, cuando te volteas ves a un gigante con el poder del espacio en su mano");
+            System.out.println("antes de que pueda reaccionar este te lleva a otra dimencion donde te encuetras flotando en el espacio");
+            System.out.println("pero afortunadamente para ti el gigante le gustan las peleas justas porlo que hay plataformas en las que te puedes mover para atacar");
+             //confirma que la entrada sea valida
+             try{
+                System.out.println("");
+                System.out.println("ingrese 1 para continuar");
+                int continuar = Integer.parseInt(input.nextLine());
+                if (continuar == 1) {
+                    break;
+                }else{
+                    System.out.println("codigo no valido");
+                }
+            }catch (NumberFormatException error){
+                System.out.println("");
+                System.out.println("codigo no valido");
+            }
+            
+            //batalla final
+            System.out.println("Has iniciado una batalla con "+oblivionLord.nombre);
+            batalla = true;
+            codeAtaque = 0;
+            
+            //gameover
+            gameOver = false;
+            
+            //se va a repetir la batalla hasta que alguno de los dos muera
+            while (batalla) {
+
+                //menu de batalla
+                System.out.println("¿Que deceas hacer?");
+                System.out.println("1. Atacar");
+                System.out.println("2. Cargar Energia");
+                System.out.println("3. Recuperarse");
+
+                //confirma que la entrada es valida
+                while (true) {
+                    try{
+                        System.out.println("Ingrese el codigo de la accion que decea realizar");
+                        codeAccion = Integer.parseInt(input.nextLine());
+                        if (codeAccion < 1 || codeAccion > 3) {
+                            System.out.println("codigo invalido");                            
+                        }else{
+                            break;
+                        }
+                    }catch(NumberFormatException error){
+                        System.out.println("codigo invalido");
+                    }
+                }
+                //definimos la capacidad de  esquivar del heroe 
+                isHeroEsquiva = esquiva.isEsquivar(rand, selectedHero.Svelocidad);
+
+                //definimos la capacidad de esquivar de shadow
+                isOblivionEsquiva = esquiva.isEsquivar(rand, ironFist.velocidad);
+                
+                //definimos la carga del poder
+                thecharge= charge.carga(rand, 40);
+
+                //definimos la recuperacion de vida
+                sanacion = sanar.heal(rand, 40);
+                
+                //definimos el ataque
+                respuesta =atack.respuesta(rand,10);
+
+                //contador para que no robe mas de un turno
+                int contador = 0;
+
+
+                //dependiendo de la eleccion decide que accion tomar                    
+                switch (codeAccion) {
+                    //atacar
+                    case 1:
+
+                    //menu de ataque
+                        System.out.println("Que ataque decea usar");
+                        System.out.println("1. "+selectedHero.SnombrePrincipal+" es necesario una carga de "+carga.chargePrincipal);
+                        System.out.println("2. "+selectedHero.SnombreSecundario+" es necesario una carga de "+carga.chargeSecundario);
+                        System.out.println("3. "+selectedHero.SnombreFinal+" es necesario una carga de "+carga.chargeFinal);
+                        System.out.println("Recuerda que si eliges un poder y no tienes la carga necesaria pierdes turno");
+                        System.out.println("Su carga es de "+selectedHero.Soverload);
+
+                        //confirma que la entrada sea valida
+                    while (true) {  
+                        try{
+                            System.out.println("");
+                            System.out.println("Ingrese el codigo de la accion que desea realizar");
+                            codeAtaque = Integer.parseInt(input.nextLine());
+                            if (codeAtaque < 1 || codeAtaque > 3) {
+                                System.out.println("Ingrese un codigo valido");
+                            }else{
+                                break;
+                            }                           
+                        }catch(NumberFormatException error){
+                            System.out.println("");
+                            System.out.println("ingrese un codigo valido");
+                        }
+                    }
+                    switch (codeAtaque) {
+                        
+                        //Ataque principal
+                        case 1:
+                            if (selectedHero.Soverload >= carga.chargePrincipal) {
+                                if (isOblivionEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(oblivionLord.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(oblivionLord.nombre+" recibio el golpe");
+                                    oblivionLord.vida_hp-=selectedHero.Sataque_principal;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                            break;
+                        
+                        // Ataque secundario
+                        case 2:
+                        if (selectedHero.Soverload >= carga.chargeSecundario) {
+                            if (isOblivionEsquiva == true) {
+                                System.out.println("");
+                                System.out.println(oblivionLord.nombre+" logro esquivar el golpe ");
+                            }else{
+                                System.out.println("");
+                                System.out.println(oblivionLord.nombre+" recibio el golpe");
+                                oblivionLord.vida_hp-=selectedHero.Sataque_secundario;
+                            }
+                        }else{
+                            System.out.println("");
+                            System.out.println("Carga insuficiente, pierdes turno");
+                        }
+                        break;
+
+
+                        //Ataque final
+                        case 3:
+                            if (selectedHero.Soverload >= carga.chargeFinal) {
+                                if (isOblivionEsquiva == true) {
+                                    System.out.println("");
+                                    System.out.println(oblivionLord.nombre+" logro esquivar el golpe ");
+                                }else{
+                                    System.out.println("");
+                                    System.out.println(oblivionLord.nombre+" recibio el golpe");
+                                    oblivionLord.vida_hp-=selectedHero.Sataque_final;
+                                }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Carga insuficiente, pierdes turno");
+                            }
+                        break;
+                    }
+                    break;
+                    //cargar energia    
+                    case 2:
+                        selectedHero.Soverload += thecharge; 
+                        System.out.println("");  
+                        System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                        break;
+                    //recuperarse 
+                    case 3:
+                        selectedHero.Svida_hp += sanacion;
+                        System.out.println("");
+                        System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
+                        break;
+                }
+                System.out.println("Ahora es turno de que "+oblivionLord.nombre+" ataque");
+                do {
+                    //segun el numero aleatrio deside el ataque
+                    if (respuesta <= 2) {
+                        System.out.println(oblivionLord.nombre+" lanza su ataque final: "+oblivionLord.nombreFinal);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=oblivionLord.ataque_final;
+                        }
+                    }else if (respuesta > 2 && respuesta <= 5 ) {
+                        System.out.println(oblivionLord.nombre+" lanza "+oblivionLord.nombreSecundario);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=oblivionLord.ataque_secundario;
+                        }
+                    }else{
+                        System.out.println(oblivionLord.nombre+" lanza "+oblivionLord.nombrePrincipal);
+                        if (isHeroEsquiva == true) {
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
+                        }else{
+                            System.out.println("");
+                            System.out.println(selectedHero.Snombre+" recibio el golpe");
+                            selectedHero.Svida_hp-=oblivionLord.ataque_principal;
+                        }
+                    }
+                    
+                    //la trampa verdadero
+                    laTrampa = true; 
+                    if (laTrampa == true) {
+                        contador++;
+                    }
+                    //definimos la trampa 
+                    laTrampa = trampa.isTrampa(rand);
+                    
+                        
+                    
+                    if (contador>1) {
+                        laTrampa = false;
+                    }
+                    if (laTrampa == true) {
+                        System.out.println(oblivionLord.nombre+" te ha robado tu turno");
+                    }
+                    System.out.println("Estadisticas del heroe:");
+                    System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
+                    System.out.println("");
+                    System.out.println("Estadisticas del villano");
+                    System.out.println("vida: "+oblivionLord.vida_hp);
+                    System.out.println("");
+                    
+                } while (laTrampa);
+                if (oblivionLord.vida_hp <= 0) {
+                    System.out.println("has ganado");
+                    batalla = false;
+                }else if (selectedHero.Svida_hp <=0) {
+                    System.out.println("Has perdido");
+                    gameOver = true;
+                    batalla = false;}
+                }
+            if(gameOver == true){
+                break;
+            }
+            System.out.println("-Es increible lo que has logrado, yo solo seguia la profesia");
+            System.out.println("aquel que me derrote tendra el poder del vacio");
+            System.out.println("ahora te pertenece-");
+            System.out.println("despues de obtener el vacio lograste salir de la dimencion lograste entender el vacio");
+            System.out.println("y su potencial, utilizandolo para la ayuda de la humanidad");
+            System.out.println("██╗    ██╗██╗███╗   ██╗███╗   ██╗███████╗██████╗ ");
+            System.out.println("██║    ██║██║████╗  ██║████╗  ██║██╔════╝██╔══██╗");
+            System.out.println("██║ █╗ ██║██║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝");
+            System.out.println("██║███╗██║██║██║╚██╗██║██║╚██╗██║██╔══╝  ██╔══██╗");
+            System.out.println("╚███╔███╔╝██║██║ ╚████║██║ ╚████║███████╗██║  ██║");
+            System.out.println(" ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝");
 
                 break;
             //configuracion
