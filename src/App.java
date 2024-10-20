@@ -4,69 +4,6 @@
 
 import java.util.Scanner;
 
-// Clase base del personaje
-class Personaje {
-    String nombre;
-    int fuerza;
-    int velocidad;
-    int vida_hp;
-    int ataque_principal;
-    int ataque_secundario;
-    int ataque_final;
-    int overload;
-
-    // Definir constructor
-    public Personaje(
-            String nombre,
-            int fuerza,
-            int velocidad,
-            int vida_hp,
-            int ataque_principal,
-            int ataque_secundario,
-            int ataque_final,
-            int overload) {
-        this.nombre = nombre;
-        this.fuerza = fuerza;
-        this.velocidad = velocidad;
-        this.vida_hp = vida_hp;
-        this.ataque_principal=ataque_principal;
-        this.ataque_secundario=ataque_secundario;
-        this.ataque_final=ataque_final;
-        this.overload=overload;
-    }
-}
-
-class SuperHero extends Personaje {
-    // definir el constructor
-    public SuperHero(
-            String nombre,
-            int fuerza,
-            int velocidad,
-            int vida_hp,
-            int ataque_principal,
-            int ataque_secundario,
-            int ataque_final,
-            int overload){
-            super(nombre, fuerza, velocidad, vida_hp, ataque_principal, ataque_secundario, ataque_final,overload);
-    }
-}
-
-class Villano extends Personaje {
-    // definir el constructor
-    public Villano(
-            String nombre,
-            int fuerza,
-            int velocidad,
-            int vida_hp,
-            int ataque_principal,
-            int ataque_secundario,
-            int ataque_final,
-            int overload){
-            super(nombre, fuerza, velocidad, vida_hp, ataque_principal, ataque_secundario, ataque_final,overload);
-    }
-}
-
-
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -115,7 +52,7 @@ public class App {
             
         }
         System.out.print("\033[2J");
-
+        SuperHero selectedHero = null;
         //seleccionar el caso
         switch (code) {
             //jugar
@@ -200,7 +137,7 @@ public class App {
 
                         //si es valida elige a speed flash
                         if (codeSeleccion == 1) {                    
-                            SuperHero selectedHero = new SuperHero("SPEED FLASH", 70, 95, 60,28,42,70,0);
+                            selectedHero = new SuperHero("SPEED FLASH", 70, 95, 60,28,42,70,0);
 
                             //sale del bucle
                             isSeleccion = false;
@@ -249,7 +186,7 @@ public class App {
                         //si es valida elige si usar el personaje
 
                         if (codeSeleccion == 1) {                    
-                            SuperHero selectedHero = new SuperHero("IRON HAMMER", 70, 95, 60,36,54,90,0);
+                            selectedHero = new SuperHero("IRON HAMMER", 70, 95, 60,36,54,90,0);
 
                             //si usa el personaje sale del bucle
                             isSeleccion = false;
@@ -299,7 +236,7 @@ public class App {
 
                         //si es valida elige si usar el personaje
                         if (codeSeleccion == 1) {                    
-                            SuperHero selectedHero = new SuperHero("SILENT SHADOW", 65, 85, 70,26,39,65,0);
+                            selectedHero = new SuperHero("SILENT SHADOW", 65, 85, 70,26,39,65,0);
 
                             //si elige el personaje sale del bucle
                             isSeleccion = false;
@@ -349,7 +286,7 @@ public class App {
 
                         //si es valida elige si usar el personaje
                         if (codeSeleccion == 1) {                    
-                            SuperHero selectedHero= new SuperHero("STONE COLOSSUS", 95, 40, 100,38,57,95,0);
+                        selectedHero= new SuperHero("STONE COLOSSUS", 95, 40, 100,38,57,95,0);
 
                             //si usa el personaje sale del bucle
                             isSeleccion = false;
@@ -398,7 +335,7 @@ public class App {
 
                         //si es valida decide si usar el personage
                         if (codeSeleccion == 1) {                    
-                            SuperHero selectedHero= new SuperHero("RADIANT FLASH", 80, 75, 65,32,48,80,0);
+                        selectedHero= new SuperHero("RADIANT FLASH", 80, 75, 65,32,48,80,0);
 
                             //si usa el personaje sale del bucle
                             isSeleccion = false;
@@ -463,6 +400,71 @@ public class App {
                     }                          
                 }
                 System.out.println("\033[2J");
+                
+                //creamos llos villanos
+
+                //Shadow crawler
+                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 50, 70, 60, 20, 30, 50, 0);
+                
+                //Iron Fist
+                Villano ironFist = new Villano("IRON FIST", 65, 60, 80, 26, 39, 65, 0);
+                
+                //Toxic Viper
+                Villano toxicViper = new Villano("TOXIC VIPER", 75, 55, 100, 30, 45, 75, 0);
+                
+                //Dark Sorcerer
+                Villano darkSorcerer = new Villano("DARK SORCERER", 85, 50, 120, 34, 51, 85, 0);
+                
+                //Oblivion Lord (Jefe Final)
+                Villano oblivion = new Villano("OBLIVION", 100, 45, 150, 40, 60, 100, 0);
+                
+                //lore
+                while (true) {
+                    System.out.println("Un antiguo mal ha despertado y la oscuridad comienza a extenderse por el mundo. Los villanos más");
+                    System.out.println("peligrosos han escapado de sus prisiones y ahora amenazan con sumir al planeta en el caos. Solo un");
+                    System.out.println("grupo de héroes con habilidades extraordinarias puede detenerlos y restaurar la paz.");
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
+                        System.out.println("codigo no valido");
+                    }
+                    
+                }
+                System.out.println("\033[2J");
+                //encuentro con el primer villano
+                while (true) {
+                    System.out.println("Despues de muchos dias investigando lograron encontrar la guarida del oscuro Shadow Crawler");
+                    System.out.println("un ser que segun la historia tiene el poder de controlar las sombras y sembrar terror a traves de ellas");
+                    System.out.println("este se encontraba en un bosque sombrio y puede hacechar desde la oscuridad aprovechandoce de esta y haciendose mas fuerte.");
+                    System.out.println("Despues de un rato de que "+selectedHero.nombre+" estubiera investigando por el sombrio bosque");
+                    System.out.println("escuchan muy cerca de ellos un");
+                    System.out.println("-no se si eres muy valiente o muy estupido por atreverte a desafiarme, ese pecado solo hara que seas");
+                    System.out.println("consumido por mis sombras-");
+                    System.out.println("");
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
+                        System.out.println("codigo no valido");
+                    }
+                    
+                }
+
 
                 break;
             //configuracion
