@@ -715,23 +715,27 @@ public class App {
                     } while (laTrampa);
                     if (shadowCrawler.vida_hp <= 0) {
                         System.out.println("has ganado");
+                        batalla = false;
                     }else if (selectedHero.Svida_hp <=0) {
                         System.out.println("Has perdido");
                         gameOver = true;
-                        break;
-                    }
+                        batalla = false;}
+                        
+                    
                 }
                 if(gameOver == true){
                     break;
                 }
+
                 break;
-            //!configuracion
+            //configuracion
             case 2:
-                System.out.println("sdasda");
+                System.out.println("easter egg");
+                System.out.println("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
                 break;
-            //!salir
+            //salir
             case 3:
-                
+                System.out.println("Gracias por jugar");
                 break;
         
        }
