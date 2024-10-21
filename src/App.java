@@ -26,6 +26,8 @@ public class App {
         //trampa villano
         boolean laTrampa;
 
+
+
         //bienvenida al programa
         System.out.print("\033[2J");
         System.out.println("--------------------------------------------------------------------------------");
@@ -424,19 +426,19 @@ public class App {
                 //creamos los villanos
 
                 //Shadow crawler
-                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 30, 40, 60,"Golpe de Sombra", 12,"Ataque Oscuro", 18,"Emboscada Nocturna", 30, 0);
+                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 15, 40, 60,"Golpe de Sombra", 6,"Ataque Oscuro", 9,"Emboscada Nocturna", 15, 0);
                 
                 //Iron Fist
-                Villano ironFist = new Villano("IRON FIST", 35, 30, 80,"Puño de Hierro", 14,"Impacto Aplastante", 21,"Golpe Destructor", 35, 0);
+                Villano ironFist = new Villano("IRON FIST", 20, 30, 80,"Puño de Hierro", 8,"Impacto Aplastante", 12,"Golpe Destructor", 20, 0);
                 
                 //Toxic Viper
-                Villano toxicViper = new Villano("TOXIC VIPER", 45, 35, 120,"Mordida Tóxica", 18,"Chorro Venenoso", 27,"Nube Letal", 45, 0);
+                Villano toxicViper = new Villano("TOXIC VIPER", 25, 35, 120,"Mordida Tóxica", 10,"Chorro Venenoso", 15,"Nube Letal", 25, 0);
                 
                 //Dark Sorcerer
-                Villano darkSorcerer = new Villano("DARK SORCERER", 55, 40, 140,"Bola de Fuego Oscura", 22,"Rayo Maligno", 33,"Invocación de la Oscuridad", 55, 0);
+                Villano darkSorcerer = new Villano("DARK SORCERER", 30, 40, 140,"Bola de Fuego Oscura", 12,"Rayo Maligno", 18,"Invocación de la Oscuridad", 30, 0);
                 
                 //wolf yissus (Jefe Final)
-                Villano wolfYissus = new Villano("WOLF YISSUS", 60, 50, 180,"Java Nullwave", 24,"Python's Blackhole Comprehension", 36,"Voidscript Overload", 60, 0);
+                Villano wolfYissus = new Villano("WOLF YISSUS", 35, 50, 180,"Java Nullwave", 14,"Python's Blackhole Comprehension", 21,"Voidscript Overload", 35, 0);
                 
                 //definimos la carga de los poderes
                 charge carga = new charge(0, 30, 60);
@@ -459,7 +461,6 @@ public class App {
                 //definimos la capacidad de esquivar de oblivion lord
                 boolean isOblivionEsquiva ; 
 
-                
 
                 //lore
                 while (true) {
@@ -554,7 +555,7 @@ public class App {
                     thecharge= charge.carga(rand, 10);
 
                     //definimos la recuperacion de vida
-                    sanacion = sanar.heal(rand, 10);
+                    sanacion = sanar.heal(rand, 15);
                     
                     //definimos el ataque
                     respuesta =attack.respuesta(rand,20);
@@ -604,6 +605,7 @@ public class App {
                                         System.out.println("");
                                         System.out.println(shadowCrawler.nombre+" recibio el golpe");
                                         shadowCrawler.vida_hp-=selectedHero.Sataque_principal;
+                                        selectedHero.Soverload-=carga.chargePrincipal;
                                     }
                                 }else{
                                     System.out.println("");
@@ -621,6 +623,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(shadowCrawler.nombre+" recibio el golpe");
                                     shadowCrawler.vida_hp-=selectedHero.Sataque_secundario;
+                                    selectedHero.Soverload-=carga.chargeSecundario;
                                 }
                             }else{
                                 System.out.println("");
@@ -639,6 +642,7 @@ public class App {
                                         System.out.println("");
                                         System.out.println(shadowCrawler.nombre+" recibio el golpe");
                                         shadowCrawler.vida_hp-=selectedHero.Sataque_final;
+                                        selectedHero.Soverload-=carga.chargeFinal;
                                     }
                                 }else{
                                     System.out.println("");
@@ -678,17 +682,17 @@ public class App {
                         System.out.println("Ahora es turno de que "+shadowCrawler.nombre+" ataque");
                         System.out.println("");
                         //segun el numero aleatrio deside el ataque
-                        if (respuesta <= 3) {
-                            System.out.println(shadowCrawler.nombre+" lanza su ataque final: "+shadowCrawler.nombreFinal);
+                        if (respuesta <= 10) {
+                            System.out.println(shadowCrawler.nombre+" lanza su ataque : "+shadowCrawler.nombrePrincipal);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                             }else{
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" recibio el golpe");
-                                selectedHero.Svida_hp-=shadowCrawler.ataque_final;
+                                selectedHero.Svida_hp-=shadowCrawler.ataque_principal;
                             }
-                        }else if (respuesta > 3 && respuesta <= 10 ) {
+                        }else if (respuesta > 10 && respuesta <= 17 ) {
                             System.out.println(shadowCrawler.nombre+" lanza "+shadowCrawler.nombreSecundario);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
@@ -699,14 +703,14 @@ public class App {
                                 selectedHero.Svida_hp-=shadowCrawler.ataque_secundario;
                             }
                         }else{
-                            System.out.println(shadowCrawler.nombre+" lanza "+shadowCrawler.nombrePrincipal);
+                            System.out.println(shadowCrawler.nombre+" lanza su ataque final"+shadowCrawler.nombreFinal);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                             }else{
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" recibio el golpe");
-                                selectedHero.Svida_hp-=shadowCrawler.ataque_principal;
+                                selectedHero.Svida_hp-=shadowCrawler.ataque_final;
                             }
                         }
                         
@@ -812,7 +816,7 @@ public class App {
                 System.out.println("-y a ti te espera el mismo destino-");
 
                 while (true) {
-                   
+                
                     //confirma que la entrada sea valida
                     try{
                         System.out.println("");
@@ -838,6 +842,9 @@ public class App {
                 //gameover
                 gameOver = false;
                 
+                //recargamos vida
+
+
                 //se va a repetir la batalla hasta que alguno de los dos muera
                 while (batalla) {
 
@@ -921,6 +928,7 @@ public class App {
                                         System.out.println("");
                                         System.out.println(ironFist.nombre+" recibio el golpe");
                                         ironFist.vida_hp-=selectedHero.Sataque_principal;
+                                        selectedHero.Soverload-=carga.chargePrincipal;
                                     }
                                 }else{
                                     System.out.println("");
@@ -938,6 +946,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(ironFist.nombre+" recibio el golpe");
                                     ironFist.vida_hp-=selectedHero.Sataque_secundario;
+                                    selectedHero.Soverload-=carga.chargeSecundario;
                                 }
                             }else{
                                 System.out.println("");
@@ -956,6 +965,7 @@ public class App {
                                         System.out.println("");
                                         System.out.println(ironFist.nombre+" recibio el golpe");
                                         ironFist.vida_hp-=selectedHero.Sataque_final;
+                                        selectedHero.Soverload-=carga.chargeFinal;
                                     }
                                 }else{
                                     System.out.println("");
@@ -995,17 +1005,17 @@ public class App {
                         System.out.println("");
 
                         //segun el numero aleatrio deside el ataque
-                        if (respuesta <= 3) {
-                            System.out.println(ironFist.nombre+" lanza su ataque final: "+ironFist.nombreFinal);
+                        if (respuesta <= 10) {
+                            System.out.println(ironFist.nombre+" lanza  "+ironFist.nombrePrincipal);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                             }else{
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" recibio el golpe");
-                                selectedHero.Svida_hp-=ironFist.ataque_final;
+                                selectedHero.Svida_hp-=ironFist.ataque_principal;
                             }
-                        }else if (respuesta > 3 && respuesta <= 10) {
+                        }else if (respuesta > 10 && respuesta <= 17) {
                             System.out.println(ironFist.nombre+" lanza "+ironFist.nombreSecundario);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
@@ -1016,14 +1026,14 @@ public class App {
                                 selectedHero.Svida_hp-=ironFist.ataque_secundario;
                             }
                         }else{
-                            System.out.println(ironFist.nombre+" lanza "+ironFist.nombrePrincipal);
+                            System.out.println(ironFist.nombre+" lanza su ataque final"+ironFist.nombreFinal);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                             }else{
                                 System.out.println("");
                                 System.out.println(selectedHero.Snombre+" recibio el golpe");
-                                selectedHero.Svida_hp-=ironFist.ataque_principal;
+                                selectedHero.Svida_hp-=ironFist.ataque_final;
                             }
                         }
                         
@@ -1125,6 +1135,9 @@ public class App {
             //gameover
             gameOver = false;
             
+            //recargamos vida
+
+
             //se va a repetir la batalla hasta que alguno de los dos muera
             while (batalla) {
 
@@ -1212,6 +1225,7 @@ public class App {
                             }else{
                                 System.out.println("");
                                 System.out.println("Carga insuficiente, pierdes turno");
+                                selectedHero.Soverload-=carga.chargePrincipal;
                             }
                             break;
                         
@@ -1225,6 +1239,7 @@ public class App {
                                 System.out.println("");
                                 System.out.println(toxicViper.nombre+" recibio el golpe");
                                 toxicViper.vida_hp-=selectedHero.Sataque_secundario;
+                                selectedHero.Soverload-=carga.chargeSecundario;
                             }
                         }else{
                             System.out.println("");
@@ -1243,6 +1258,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(toxicViper.nombre+" recibio el golpe");
                                     toxicViper.vida_hp-=selectedHero.Sataque_final;
+                                    selectedHero.Soverload-=carga.chargeFinal;
                                 }
                             }else{
                                 System.out.println("");
@@ -1281,17 +1297,17 @@ public class App {
                     System.out.println("Ahora es turno de que "+toxicViper.nombre+" ataque");
                     System.out.println("");
                     //segun el numero aleatrio deside el ataque
-                    if (respuesta <= 3) {
-                        System.out.println(toxicViper.nombre+" lanza su ataque final: "+toxicViper.nombreFinal);
+                    if (respuesta <= 10) {
+                        System.out.println(toxicViper.nombre+" lanza  "+toxicViper.nombrePrincipal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=toxicViper.ataque_final;
+                            selectedHero.Svida_hp-=toxicViper.ataque_principal;
                         }
-                    }else if (respuesta > 3 && respuesta <= 10 ) {
+                    }else if (respuesta > 10 && respuesta <= 17 ) {
                         System.out.println(toxicViper.nombre+" lanza "+toxicViper.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1302,14 +1318,14 @@ public class App {
                             selectedHero.Svida_hp-=toxicViper.ataque_secundario;
                         }
                     }else{
-                        System.out.println(toxicViper.nombre+" lanza "+toxicViper.nombrePrincipal);
+                        System.out.println(toxicViper.nombre+" lanza su ataque final: "+toxicViper.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=toxicViper.ataque_principal;
+                            selectedHero.Svida_hp-=toxicViper.ataque_final;
                         }
                     }
                     
@@ -1401,6 +1417,8 @@ public class App {
             codeAtaque = 0;
             //gameover
             gameOver = false;
+
+
             
             //se va a repetir la batalla hasta que alguno de los dos muera
             while (batalla) {
@@ -1485,6 +1503,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(darkSorcerer.nombre+" recibio el golpe");
                                     darkSorcerer.vida_hp-=selectedHero.Sataque_principal;
+                                    selectedHero.Soverload-=carga.chargePrincipal;
                                 }
                             }else{
                                 System.out.println("");
@@ -1502,6 +1521,7 @@ public class App {
                                 System.out.println("");
                                 System.out.println(darkSorcerer.nombre+" recibio el golpe");
                                 darkSorcerer.vida_hp-=selectedHero.Sataque_secundario;
+                                selectedHero.Soverload-=carga.chargeSecundario;
                             }
                         }else{
                             System.out.println("");
@@ -1520,6 +1540,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(darkSorcerer.nombre+" recibio el golpe");
                                     darkSorcerer.vida_hp-=selectedHero.Sataque_final;
+                                    selectedHero.Soverload-=carga.chargeFinal;
                                 }
                             }else{
                                 System.out.println("");
@@ -1557,17 +1578,17 @@ public class App {
                     System.out.println("");
                     System.out.println("Ahora es turno de que "+darkSorcerer.nombre+" ataque");
                     //segun el numero aleatrio deside el ataque
-                    if (respuesta <= 3) {
-                        System.out.println(darkSorcerer.nombre+" lanza su ataque final: "+darkSorcerer.nombreFinal);
+                    if (respuesta <= 10) {
+                        System.out.println(darkSorcerer.nombre+" lanza "+darkSorcerer.nombrePrincipal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=darkSorcerer.ataque_final;
+                            selectedHero.Svida_hp-=darkSorcerer.ataque_principal;
                         }
-                    }else if (respuesta > 3 && respuesta <= 10 ) {
+                    }else if (respuesta > 10 && respuesta <= 17 ) {
                         System.out.println(darkSorcerer.nombre+" lanza "+darkSorcerer.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1578,14 +1599,14 @@ public class App {
                             selectedHero.Svida_hp-=darkSorcerer.ataque_secundario;
                         }
                     }else{
-                        System.out.println(darkSorcerer.nombre+" lanza "+darkSorcerer.nombrePrincipal);
+                        System.out.println(darkSorcerer.nombre+" lanza su ataque final"+darkSorcerer.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=darkSorcerer.ataque_principal;
+                            selectedHero.Svida_hp-=darkSorcerer.ataque_final;
                         }
                     }
                     
@@ -1648,7 +1669,7 @@ public class App {
                     System.out.println("");
                     System.out.println("codigo no valido");
                 }
-             }
+            }
             
             //batalla final
             System.out.println("Has iniciado una batalla con "+wolfYissus.nombre);
@@ -1657,6 +1678,8 @@ public class App {
             
             //gameover
             gameOver = false;
+
+
             
             //se va a repetir la batalla hasta que alguno de los dos muera
             while (batalla) {
@@ -1741,6 +1764,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(wolfYissus.nombre+" recibio el golpe");
                                     wolfYissus.vida_hp-=selectedHero.Sataque_principal;
+                                    selectedHero.Soverload-=carga.chargePrincipal;
                                 }
                             }else{
                                 System.out.println("");
@@ -1758,6 +1782,7 @@ public class App {
                                 System.out.println("");
                                 System.out.println(wolfYissus.nombre+" recibio el golpe");
                                 wolfYissus.vida_hp-=selectedHero.Sataque_secundario;
+                                selectedHero.Soverload-=carga.chargeSecundario;
                             }
                         }else{
                             System.out.println("");
@@ -1776,6 +1801,7 @@ public class App {
                                     System.out.println("");
                                     System.out.println(wolfYissus.nombre+" recibio el golpe");
                                     wolfYissus.vida_hp-=selectedHero.Sataque_final;
+                                    selectedHero.Soverload-=carga.chargeFinal;
                                 }
                             }else{
                                 System.out.println("");
@@ -1814,17 +1840,17 @@ public class App {
                     System.out.println("Ahora es turno de que "+wolfYissus.nombre+" ataque");
                     System.out.println("");
                     //segun el numero aleatrio deside el ataque
-                    if (respuesta <= 3) {
-                        System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
+                    if (respuesta <= 10) {
+                        System.out.println(wolfYissus.nombre+" lanza "+wolfYissus.nombrePrincipal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=wolfYissus.ataque_final;
+                            selectedHero.Svida_hp-=wolfYissus.ataque_principal;
                         }
-                    }else if (respuesta > 3 && respuesta <= 10 ) {
+                    }else if (respuesta > 10 && respuesta <= 17 ) {
                         System.out.println(wolfYissus.nombre+" lanza "+wolfYissus.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1835,14 +1861,14 @@ public class App {
                             selectedHero.Svida_hp-=wolfYissus.ataque_secundario;
                         }
                     }else{
-                        System.out.println(wolfYissus.nombre+" lanza "+wolfYissus.nombrePrincipal);
+                        System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=wolfYissus.ataque_principal;
+                            selectedHero.Svida_hp-=wolfYissus.ataque_final;
                         }
                     }
                     
