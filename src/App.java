@@ -416,7 +416,7 @@ public class App {
                 }
                 System.out.println("\033[2J");
                 
-                //creamos llos villanos
+                //creamos los villanos
 
                 //Shadow crawler
                 Villano shadowCrawler = new Villano("SHADOW CRAWLER", 50, 70, 60,"Golpe de Sombra", 20,"Ataque Oscuro", 30,"Emboscada Nocturna", 50, 0);
@@ -512,6 +512,7 @@ public class App {
                 int codeAccion;
                 boolean batalla = true;
                 int codeAtaque = 0;
+                
                 //gameover
                 boolean gameOver = false;
                 
@@ -654,8 +655,20 @@ public class App {
                             System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
                             break;
                     }
-                    System.out.println("Ahora es turno de que "+shadowCrawler.nombre+" ataque");
+                    
+                    
                     do {
+                        if (shadowCrawler.vida_hp <= 0) {
+                            System.out.println("has ganado");
+                            batalla = false;
+                            break;
+                        }else if (selectedHero.Svida_hp <=0) {
+                            System.out.println("Has perdido");
+                            gameOver = true;
+                            batalla = false;
+                            break;
+                        }
+                        System.out.println("Ahora es turno de que "+shadowCrawler.nombre+" ataque");
                         //segun el numero aleatrio deside el ataque
                         if (respuesta <= 2) {
                             System.out.println(shadowCrawler.nombre+" lanza su ataque final: "+shadowCrawler.nombreFinal);
@@ -719,7 +732,8 @@ public class App {
                     }else if (selectedHero.Svida_hp <=0) {
                         System.out.println("Has perdido");
                         gameOver = true;
-                        batalla = false;}
+                        batalla = false;
+                    }
                         
                     
                 }
@@ -737,18 +751,21 @@ public class App {
                 System.out.println("Despues de decir esto "+selectedHero.Snombre+" Procede a acabar con la vida del villano");
                 
                 //confirma que la entrada sea valida
-                try{
-                    System.out.println("");
-                    System.out.println("ingrese 1 para continuar");
-                    int continuar = Integer.parseInt(input.nextLine());
-                    if (continuar == 1) {
-                        break;
-                    }else{
+                while (true) {
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
                         System.out.println("codigo no valido");
                     }
-                }catch (NumberFormatException error){
-                    System.out.println("");
-                    System.out.println("codigo no valido");
+                    
                 }
                 
                 //segundo villano
@@ -852,7 +869,7 @@ public class App {
                         case 1:
 
                         //menu de ataque
-                            System.out.println("Que ataque decea usar");
+                            System.out.println("Que ataque desea usar");
                             System.out.println("1. "+selectedHero.SnombrePrincipal+" es necesario una carga de "+carga.chargePrincipal);
                             System.out.println("2. "+selectedHero.SnombreSecundario+" es necesario una carga de "+carga.chargeSecundario);
                             System.out.println("3. "+selectedHero.SnombreFinal+" es necesario una carga de "+carga.chargeFinal);
