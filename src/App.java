@@ -371,7 +371,7 @@ public class App {
                             System.out.println("como jugar:");
                             System.out.println("");
                             System.out.println("EL juego consiste en un combate por turnos, tu objetivo es vencer a todos los villanos");
-                            System.out.println("El juego consta de 5 niveles tu objetivo final es vencer a Oblivion Lord");
+                            System.out.println("El juego consta de 5 niveles tu objetivo final es vencer al jefe final");
                             System.out.println("Cada vez que sea tu turno podras elejir si atacar, cargar tu energia o recuperar vida");
                             System.out.println("Dependiendiendo la velocidad de tu personaje podra esquivar los ataques de los enemigos aleatoriamente");
                             System.out.println("Entre mas veloz tu personaje mas probabilidad tendra de esquivar los ataques");
@@ -419,19 +419,19 @@ public class App {
                 //creamos los villanos
 
                 //Shadow crawler
-                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 50, 70, 60,"Golpe de Sombra", 20,"Ataque Oscuro", 30,"Emboscada Nocturna", 50, 0);
+                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 30, 40, 60,"Golpe de Sombra", 20,"Ataque Oscuro", 30,"Emboscada Nocturna", 50, 0);
                 
                 //Iron Fist
-                Villano ironFist = new Villano("IRON FIST", 65, 60, 80,"Puño de Hierro", 26,"Impacto Aplastante", 39,"Golpe Destructor", 65, 0);
+                Villano ironFist = new Villano("IRON FIST", 35, 30, 80,"Puño de Hierro", 26,"Impacto Aplastante", 39,"Golpe Destructor", 65, 0);
                 
                 //Toxic Viper
-                Villano toxicViper = new Villano("TOXIC VIPER", 75, 55, 100,"Mordida Tóxica", 30,"Chorro Venenoso", 45,"Nube Letal", 75, 0);
+                Villano toxicViper = new Villano("TOXIC VIPER", 45, 35, 120,"Mordida Tóxica", 30,"Chorro Venenoso", 45,"Nube Letal", 75, 0);
                 
                 //Dark Sorcerer
-                Villano darkSorcerer = new Villano("DARK SORCERER", 85, 50, 120,"Bola de Fuego Oscura", 34,"Rayo Maligno", 51,"Invocación de la Oscuridad", 85, 0);
+                Villano darkSorcerer = new Villano("DARK SORCERER", 55, 40, 140,"Bola de Fuego Oscura", 34,"Rayo Maligno", 51,"Invocación de la Oscuridad", 85, 0);
                 
                 //Oblivion Lord (Jefe Final)
-                Villano oblivionLord = new Villano("OBLIVION LORD", 100, 45, 150,"Garra del Vacío", 40,"Onda de Caos", 60,"Apocalipsis Oscuro", 100, 0);
+                Villano wolfYissus = new Villano("WOLF YISSUS", 60, 50, 180,"Garra del Vacío", 40,"Onda de Caos", 60,"Apocalipsis Oscuro", 100, 0);
                 
                 //definimos la carga de los poderes
                 charge carga = new charge(0, 30, 60);
@@ -743,7 +743,7 @@ public class App {
                 
                 //dialogo derrota villano
                 System.out.println("-NOOOO, COMO ES POSIBLE QUE ME HALLAS DERROTADO-");
-                System.out.println("-Habla de una ves donde se encuentra "+oblivionLord.nombre);
+                System.out.println("-Habla de una ves donde se encuentra "+wolfYissus.nombre);
                 System.out.println("-JAJAJAJAJAJA, estas loco si crees que lo vas a derrotar, es mas te esta esperando en");
                 System.out.println( "la montaña donde se libero el sello, pero para llegar a el tendras que derrotar a los demas y son-");
                 System.out.println("mucho mas fuerte que tu-");
@@ -776,18 +776,21 @@ public class App {
                 System.out.println("estaba bien este se quito la tunica que lo cubria y dejo ver en su cuerpo grandes cantidades de hierro");
                 
                 //confirma que la entrada sea valida
-                try{
-                    System.out.println("");
-                    System.out.println("ingrese 1 para continuar");
-                    int continuar = Integer.parseInt(input.nextLine());
-                    if (continuar == 1) {
-                        break;
-                    }else{
+                while (true) {
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
                         System.out.println("codigo no valido");
                     }
-                }catch (NumberFormatException error){
-                    System.out.println("");
-                    System.out.println("codigo no valido");
+                    
                 }
 
                 System.out.println("\033[2J");
@@ -798,19 +801,23 @@ public class App {
                 System.out.println(selectedHero.Snombre+" se pone en pocision de ataque y le dice");
                 System.out.println("-y a ti te espera el mismo destino-");
 
-                //confirma que la entrada sea valida
-                try{
-                    System.out.println("");
-                    System.out.println("ingrese 1 para continuar");
-                    int continuar = Integer.parseInt(input.nextLine());
-                    if (continuar == 1) {
-                        break;
-                    }else{
+                while (true) {
+                   
+                    //confirma que la entrada sea valida
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
                         System.out.println("codigo no valido");
                     }
-                }catch (NumberFormatException error){
-                    System.out.println("");
-                    System.out.println("codigo no valido");
+
                 }
                 System.out.println("\033[2J");
                 
@@ -1037,18 +1044,21 @@ public class App {
                 System.out.println(selectedHero.Snombre+" no le quedo otra alternativa mas que verlo morir. ");
                 
                 //confirma que la entrada sea valida
-                try{
-                    System.out.println("");
-                    System.out.println("ingrese 1 para continuar");
-                    int continuar = Integer.parseInt(input.nextLine());
-                    if (continuar == 1) {
-                        break;
-                    }else{
+                while (true) {
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
                         System.out.println("codigo no valido");
                     }
-                }catch (NumberFormatException error){
-                    System.out.println("");
-                    System.out.println("codigo no valido");
+                    
                 }
                 System.out.println("\033[2J");
 
@@ -1063,20 +1073,22 @@ public class App {
                 System.out.println("y sumir este mundo en desperdicios toxicos,¿un mundo perfecto no te parece?");
                 System.out.println("pero para que mi sueño se haga realidad primero debo acabar contigo asi que preparate-");
                 
-                //confirma que la entrada sea valida
-                try{
-                    System.out.println("");
-                    System.out.println("ingrese 1 para continuar");
-                    int continuar = Integer.parseInt(input.nextLine());
-                    if (continuar == 1) {
-                        break;
-                    }else{
+                while (true) {
+                    //confirma que la entrada sea valida
+                    try{
+                        System.out.println("");
+                        System.out.println("ingrese 1 para continuar");
+                        int continuar = Integer.parseInt(input.nextLine());
+                        if (continuar == 1) {
+                            break;
+                        }else{
+                            System.out.println("codigo no valido");
+                        }
+                    }catch (NumberFormatException error){
+                        System.out.println("");
                         System.out.println("codigo no valido");
                     }
-                }catch (NumberFormatException error){
-                    System.out.println("");
-                    System.out.println("codigo no valido");
-                }
+                    }
             System.out.println("\033[2J");
             
             //batalla toxic
@@ -1298,19 +1310,21 @@ public class App {
             System.out.println("\033[2J");
             System.out.println("-Lograste vencerme, acabaste con la ilusion de mi mundo perfecto, espero que lo que intentes lograr no sea el camino equicado-");
             System.out.println(selectedHero.Snombre+" sale del lugar despues de cuestionarse la razon por la cual quieren sumir el mundo en oscuridad");
-            //confirma que la entrada sea valida
-            try{
-                System.out.println("");
-                System.out.println("ingrese 1 para continuar");
-                int continuar = Integer.parseInt(input.nextLine());
-                if (continuar == 1) {
-                    break;
-                }else{
+            while (true) {
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
                     System.out.println("codigo no valido");
-                }
-            }catch (NumberFormatException error){
-                System.out.println("");
-                System.out.println("codigo no valido");
+                }   
             }
             System.out.println("\033[2J");
              
@@ -1318,21 +1332,24 @@ public class App {
             System.out.println("llegando a la cima de la montaña, la oscuridad comenzo a ser cada ves mas grande y densa");
             System.out.println("hasta que llego un punto en el cual no podia ni ver sus manos");
             System.out.println("pero en esa oscuridad se logro escuchar una voz");
-            System.out.println("-De aqui no pasaras a "+oblivionLord.nombre+" no le gustan los intrusos-");
+            System.out.println("-De aqui no pasaras a "+wolfYissus.nombre+" no le gustan los intrusos-");
             System.out.println("despues de eso viste como el lugar se ilumino y lograste ver una mancha negra en el cielo");
-            //confirma que la entrada sea valida
-            try{
-                System.out.println("");
-                System.out.println("ingrese 1 para continuar");
-                int continuar = Integer.parseInt(input.nextLine());
-                if (continuar == 1) {
-                    break;
-                }else{
+            while (true) {
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
                     System.out.println("codigo no valido");
                 }
-            }catch (NumberFormatException error){
-                System.out.println("");
-                System.out.println("codigo no valido");
+                
             }
             System.out.println("\033[2J");
 
@@ -1559,23 +1576,25 @@ public class App {
             System.out.println("Escuchas un gran estruendo detras tullo, cuando te volteas ves a un gigante con el poder del espacio en su mano");
             System.out.println("antes de que pueda reaccionar este te lleva a otra dimencion donde te encuetras flotando en el espacio");
             System.out.println("pero afortunadamente para ti el gigante le gustan las peleas justas porlo que hay plataformas en las que te puedes mover para atacar");
-             //confirma que la entrada sea valida
-             try{
-                System.out.println("");
-                System.out.println("ingrese 1 para continuar");
-                int continuar = Integer.parseInt(input.nextLine());
-                if (continuar == 1) {
-                    break;
-                }else{
+            while (true) {
+                //confirma que la entrada sea valida
+                try{
+                    System.out.println("");
+                    System.out.println("ingrese 1 para continuar");
+                    int continuar = Integer.parseInt(input.nextLine());
+                    if (continuar == 1) {
+                        break;
+                    }else{
+                        System.out.println("codigo no valido");
+                    }
+                }catch (NumberFormatException error){
+                    System.out.println("");
                     System.out.println("codigo no valido");
                 }
-            }catch (NumberFormatException error){
-                System.out.println("");
-                System.out.println("codigo no valido");
-            }
+             }
             
             //batalla final
-            System.out.println("Has iniciado una batalla con "+oblivionLord.nombre);
+            System.out.println("Has iniciado una batalla con "+wolfYissus.nombre);
             batalla = true;
             codeAtaque = 0;
             
@@ -1660,11 +1679,11 @@ public class App {
                             if (selectedHero.Soverload >= carga.chargePrincipal) {
                                 if (isOblivionEsquiva == true) {
                                     System.out.println("");
-                                    System.out.println(oblivionLord.nombre+" logro esquivar el golpe ");
+                                    System.out.println(wolfYissus.nombre+" logro esquivar el golpe ");
                                 }else{
                                     System.out.println("");
-                                    System.out.println(oblivionLord.nombre+" recibio el golpe");
-                                    oblivionLord.vida_hp-=selectedHero.Sataque_principal;
+                                    System.out.println(wolfYissus.nombre+" recibio el golpe");
+                                    wolfYissus.vida_hp-=selectedHero.Sataque_principal;
                                 }
                             }else{
                                 System.out.println("");
@@ -1677,11 +1696,11 @@ public class App {
                         if (selectedHero.Soverload >= carga.chargeSecundario) {
                             if (isOblivionEsquiva == true) {
                                 System.out.println("");
-                                System.out.println(oblivionLord.nombre+" logro esquivar el golpe ");
+                                System.out.println(wolfYissus.nombre+" logro esquivar el golpe ");
                             }else{
                                 System.out.println("");
-                                System.out.println(oblivionLord.nombre+" recibio el golpe");
-                                oblivionLord.vida_hp-=selectedHero.Sataque_secundario;
+                                System.out.println(wolfYissus.nombre+" recibio el golpe");
+                                wolfYissus.vida_hp-=selectedHero.Sataque_secundario;
                             }
                         }else{
                             System.out.println("");
@@ -1695,11 +1714,11 @@ public class App {
                             if (selectedHero.Soverload >= carga.chargeFinal) {
                                 if (isOblivionEsquiva == true) {
                                     System.out.println("");
-                                    System.out.println(oblivionLord.nombre+" logro esquivar el golpe ");
+                                    System.out.println(wolfYissus.nombre+" logro esquivar el golpe ");
                                 }else{
                                     System.out.println("");
-                                    System.out.println(oblivionLord.nombre+" recibio el golpe");
-                                    oblivionLord.vida_hp-=selectedHero.Sataque_final;
+                                    System.out.println(wolfYissus.nombre+" recibio el golpe");
+                                    wolfYissus.vida_hp-=selectedHero.Sataque_final;
                                 }
                             }else{
                                 System.out.println("");
@@ -1721,38 +1740,38 @@ public class App {
                         System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
                         break;
                 }
-                System.out.println("Ahora es turno de que "+oblivionLord.nombre+" ataque");
+                System.out.println("Ahora es turno de que "+wolfYissus.nombre+" ataque");
                 do {
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 2) {
-                        System.out.println(oblivionLord.nombre+" lanza su ataque final: "+oblivionLord.nombreFinal);
+                        System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=oblivionLord.ataque_final;
+                            selectedHero.Svida_hp-=wolfYissus.ataque_final;
                         }
                     }else if (respuesta > 2 && respuesta <= 5 ) {
-                        System.out.println(oblivionLord.nombre+" lanza "+oblivionLord.nombreSecundario);
+                        System.out.println(wolfYissus.nombre+" lanza "+wolfYissus.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=oblivionLord.ataque_secundario;
+                            selectedHero.Svida_hp-=wolfYissus.ataque_secundario;
                         }
                     }else{
-                        System.out.println(oblivionLord.nombre+" lanza "+oblivionLord.nombrePrincipal);
+                        System.out.println(wolfYissus.nombre+" lanza "+wolfYissus.nombrePrincipal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" logro esquivar el golpe ");
                         }else{
                             System.out.println("");
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
-                            selectedHero.Svida_hp-=oblivionLord.ataque_principal;
+                            selectedHero.Svida_hp-=wolfYissus.ataque_principal;
                         }
                     }
                     
@@ -1770,17 +1789,17 @@ public class App {
                         laTrampa = false;
                     }
                     if (laTrampa == true) {
-                        System.out.println(oblivionLord.nombre+" te ha robado tu turno");
+                        System.out.println(wolfYissus.nombre+" te ha robado tu turno");
                     }
                     System.out.println("Estadisticas del heroe:");
                     System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
                     System.out.println("");
                     System.out.println("Estadisticas del villano");
-                    System.out.println("vida: "+oblivionLord.vida_hp);
+                    System.out.println("vida: "+wolfYissus.vida_hp);
                     System.out.println("");
                     
                 } while (laTrampa);
-                if (oblivionLord.vida_hp <= 0) {
+                if (wolfYissus.vida_hp <= 0) {
                     System.out.println("has ganado");
                     batalla = false;
                 }else if (selectedHero.Svida_hp <=0) {
