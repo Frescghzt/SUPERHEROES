@@ -436,7 +436,7 @@ public class App {
                 Villano darkSorcerer = new Villano("DARK SORCERER", 55, 40, 140,"Bola de Fuego Oscura", 22,"Rayo Maligno", 33,"Invocación de la Oscuridad", 55, 0);
                 
                 //wolf yissus (Jefe Final)
-                Villano wolfYissus = new Villano("WOLF YISSUS", 60, 50, 180,"Garra del Vacío", 24,"Onda de Caos", 36,"Apocalipsis Oscuro", 60, 0);
+                Villano wolfYissus = new Villano("WOLF YISSUS", 60, 50, 180,"Java Nullwave", 24,"Python's Blackhole Comprehension", 36,"Voidscript Overload", 60, 0);
                 
                 //definimos la carga de los poderes
                 charge carga = new charge(0, 30, 60);
@@ -651,7 +651,8 @@ public class App {
                         case 2:
                             selectedHero.Soverload += thecharge; 
                             System.out.println("");  
-                            System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                            System.out.println("Ahora la carga es de "+selectedHero.Soverload); 
+                            System.out.println("");                        
                             break;
                         //recuperarse 
                         case 3:
@@ -673,7 +674,9 @@ public class App {
                             batalla = false;
                             break;
                         }
+                        System.out.println("");
                         System.out.println("Ahora es turno de que "+shadowCrawler.nombre+" ataque");
+                        System.out.println("");
                         //segun el numero aleatrio deside el ataque
                         if (respuesta <= 3) {
                             System.out.println(shadowCrawler.nombre+" lanza su ataque final: "+shadowCrawler.nombreFinal);
@@ -721,7 +724,9 @@ public class App {
                             laTrampa = false;
                         }
                         if (laTrampa == true) {
+                            System.out.println("");
                             System.out.println(shadowCrawler.nombre+" te ha robado tu turno");
+                            System.out.println("");
                         }
                         System.out.println("Estadisticas del heroe:");
                         System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
@@ -748,7 +753,7 @@ public class App {
                 
                 //dialogo derrota villano
                 System.out.println("-NOOOO, COMO ES POSIBLE QUE ME HALLAS DERROTADO-");
-                System.out.println("-Habla de una ves donde se encuentra "+wolfYissus.nombre);
+                System.out.println("-Habla de una ves donde se encuentra tu jefe");
                 System.out.println("-JAJAJAJAJAJA, estas loco si crees que lo vas a derrotar, es mas te esta esperando en");
                 System.out.println( "la montaña donde se libero el sello, pero para llegar a el tendras que derrotar a los demas y son-");
                 System.out.println("mucho mas fuerte que tu-");
@@ -772,7 +777,7 @@ public class App {
                     }
                     
                 }
-                
+                System.out.println("\033[2J");
                 //segundo villano
                 System.out.println("luego de prepararse correctamente "+selectedHero.Snombre+" se dirige a la montaña donde alguna");
                 System.out.println("vez estos villanos fueron pricioneros, no paso mucho tiemo desde que comenzo a explorar la montaña");
@@ -963,7 +968,8 @@ public class App {
                         case 2:
                             selectedHero.Soverload += thecharge; 
                             System.out.println("");  
-                            System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                            System.out.println("Ahora la carga es de "+selectedHero.Soverload);
+                            System.out.println("");                         
                             break;
                         //recuperarse 
                         case 3:
@@ -972,9 +978,9 @@ public class App {
                             System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
                             break;
                     }
-                    System.out.println("Ahora es turno de que "+ironFist.nombre+" ataque");
+                    
                     do {
-                        if (shadowCrawler.vida_hp <= 0) {
+                        if (ironFist.vida_hp <= 0) {
                             System.out.println("has ganado");
                             batalla = false;
                             break;
@@ -984,7 +990,9 @@ public class App {
                             batalla = false;
                             break;
                         }
-
+                        System.out.println("");
+                        System.out.println("Ahora es turno de que "+ironFist.nombre+" ataque");
+                        System.out.println("");
 
                         //segun el numero aleatrio deside el ataque
                         if (respuesta <= 3) {
@@ -1033,7 +1041,9 @@ public class App {
                             laTrampa = false;
                         }
                         if (laTrampa == true) {
+                            System.out.println("");
                             System.out.println(ironFist.nombre+" te ha robado tu turno");
+                            System.out.println("");
                         }
                         System.out.println("Estadisticas del heroe:");
                         System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
@@ -1245,7 +1255,8 @@ public class App {
                     case 2:
                         selectedHero.Soverload += thecharge; 
                         System.out.println("");  
-                        System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                        System.out.println("Ahora la carga es de "+selectedHero.Soverload); 
+                        System.out.println("");                        
                         break;
                     //recuperarse 
                     case 3:
@@ -1254,9 +1265,9 @@ public class App {
                         System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
                         break;
                 }
-                System.out.println("Ahora es turno de que "+toxicViper.nombre+" ataque");
+                
                 do {
-                    if (shadowCrawler.vida_hp <= 0) {
+                    if (toxicViper.vida_hp <= 0) {
                         System.out.println("has ganado");
                         batalla = false;
                         break;
@@ -1266,7 +1277,9 @@ public class App {
                         batalla = false;
                         break;
                     }
-
+                    System.out.println("");
+                    System.out.println("Ahora es turno de que "+toxicViper.nombre+" ataque");
+                    System.out.println("");
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(toxicViper.nombre+" lanza su ataque final: "+toxicViper.nombreFinal);
@@ -1314,7 +1327,9 @@ public class App {
                         laTrampa = false;
                     }
                     if (laTrampa == true) {
+                        System.out.println("");
                         System.out.println(toxicViper.nombre+" te ha robado tu turno");
+                        System.out.println("");
                     }
                     System.out.println("Estadisticas del heroe:");
                     System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
@@ -1335,7 +1350,6 @@ public class App {
             if(gameOver == true){
                 break;
             }
-            System.out.println("\033[2J");
             System.out.println("-Lograste vencerme, acabaste con la ilusion de mi mundo perfecto, espero que lo que intentes lograr no sea el camino equicado-");
             System.out.println(selectedHero.Snombre+" sale del lugar despues de cuestionarse la razon por la cual quieren sumir el mundo en oscuridad");
             while (true) {
@@ -1360,7 +1374,7 @@ public class App {
             System.out.println("llegando a la cima de la montaña, la oscuridad comenzo a ser cada ves mas grande y densa");
             System.out.println("hasta que llego un punto en el cual no podia ni ver sus manos");
             System.out.println("pero en esa oscuridad se logro escuchar una voz");
-            System.out.println("-De aqui no pasaras a "+wolfYissus.nombre+" no le gustan los intrusos-");
+            System.out.println("-De aqui no pasaras al jefe no le gustan los intrusos-");
             System.out.println("despues de eso viste como el lugar se ilumino y lograste ver una mancha negra en el cielo");
             while (true) {
                 //confirma que la entrada sea valida
@@ -1518,7 +1532,8 @@ public class App {
                     case 2:
                         selectedHero.Soverload += thecharge; 
                         System.out.println("");  
-                        System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                        System.out.println("Ahora la carga es de "+selectedHero.Soverload); 
+                        System.out.println("");                        
                         break;
                     //recuperarse 
                     case 3:
@@ -1527,9 +1542,9 @@ public class App {
                         System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
                         break;
                 }
-                System.out.println("Ahora es turno de que "+darkSorcerer.nombre+" ataque");
+                
                 do {
-                    if (shadowCrawler.vida_hp <= 0) {
+                    if (darkSorcerer.vida_hp <= 0) {
                         System.out.println("has ganado");
                         batalla = false;
                         break;
@@ -1539,7 +1554,8 @@ public class App {
                         batalla = false;
                         break;
                     }
-
+                    System.out.println("");
+                    System.out.println("Ahora es turno de que "+darkSorcerer.nombre+" ataque");
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(darkSorcerer.nombre+" lanza su ataque final: "+darkSorcerer.nombreFinal);
@@ -1587,7 +1603,9 @@ public class App {
                         laTrampa = false;
                     }
                     if (laTrampa == true) {
+                        System.out.println("");
                         System.out.println(darkSorcerer.nombre+" te ha robado tu turno");
+                        System.out.println("");
                     }
                     System.out.println("Estadisticas del heroe:");
                     System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
@@ -1612,9 +1630,9 @@ public class App {
             //ultimo dialogo dark
             System.out.println("\033[2J");
             System.out.println("-Espero que estes preparado, HAS DESPERTADO AL JEFE-");
-            System.out.println("Escuchas un gran estruendo detras tullo, cuando te volteas ves a un gigante con el poder del espacio en su mano");
-            System.out.println("antes de que pueda reaccionar este te lleva a otra dimencion donde te encuetras flotando en el espacio");
-            System.out.println("pero afortunadamente para ti el gigante le gustan las peleas justas porlo que hay plataformas en las que te puedes mover para atacar");
+            System.out.println("Escuchas un gran estruendo detras tullo, cuando te volteas ves a un lobo gigante con el poder del espacio en su mano");
+            System.out.println("antes de que pueda reaccionar este te lleva a otra dimencion donde te encuetras flotando en el espacio con un montonde algoritmos");
+            System.out.println("pero afortunadamente para ti logras descubir que puedes usar los algoritmos como plataformas para poder atacar a "+wolfYissus.nombre);
             while (true) {
                 //confirma que la entrada sea valida
                 try{
@@ -1770,7 +1788,8 @@ public class App {
                     case 2:
                         selectedHero.Soverload += thecharge; 
                         System.out.println("");  
-                        System.out.println("Ahora la carga es de "+selectedHero.Soverload);                         
+                        System.out.println("Ahora la carga es de "+selectedHero.Soverload); 
+                        System.out.println("");                        
                         break;
                     //recuperarse 
                     case 3:
@@ -1779,9 +1798,9 @@ public class App {
                         System.out.println("Ahora la vida es de "+selectedHero.Svida_hp);
                         break;
                 }
-                System.out.println("Ahora es turno de que "+wolfYissus.nombre+" ataque");
+                
                 do {
-                    if (shadowCrawler.vida_hp <= 0) {
+                    if (wolfYissus.vida_hp <= 0) {
                         System.out.println("has ganado");
                         batalla = false;
                         break;
@@ -1791,7 +1810,9 @@ public class App {
                         batalla = false;
                         break;
                     }
-
+                    System.out.println("");
+                    System.out.println("Ahora es turno de que "+wolfYissus.nombre+" ataque");
+                    System.out.println("");
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
@@ -1839,7 +1860,9 @@ public class App {
                         laTrampa = false;
                     }
                     if (laTrampa == true) {
+                        System.out.println("");
                         System.out.println(wolfYissus.nombre+" te ha robado tu turno");
+                        System.out.println("");
                     }
                     System.out.println("Estadisticas del heroe:");
                     System.out.println("vida: "+selectedHero.Svida_hp+" carga: "+selectedHero.Soverload);
