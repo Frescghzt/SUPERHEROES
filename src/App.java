@@ -419,19 +419,19 @@ public class App {
                 //creamos los villanos
 
                 //Shadow crawler
-                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 30, 40, 60,"Golpe de Sombra", 20,"Ataque Oscuro", 30,"Emboscada Nocturna", 50, 0);
+                Villano shadowCrawler = new Villano("SHADOW CRAWLER", 30, 40, 60,"Golpe de Sombra", 12,"Ataque Oscuro", 18,"Emboscada Nocturna", 30, 0);
                 
                 //Iron Fist
-                Villano ironFist = new Villano("IRON FIST", 35, 30, 80,"Puño de Hierro", 26,"Impacto Aplastante", 39,"Golpe Destructor", 65, 0);
+                Villano ironFist = new Villano("IRON FIST", 35, 30, 80,"Puño de Hierro", 14,"Impacto Aplastante", 21,"Golpe Destructor", 35, 0);
                 
                 //Toxic Viper
-                Villano toxicViper = new Villano("TOXIC VIPER", 45, 35, 120,"Mordida Tóxica", 30,"Chorro Venenoso", 45,"Nube Letal", 75, 0);
+                Villano toxicViper = new Villano("TOXIC VIPER", 45, 35, 120,"Mordida Tóxica", 18,"Chorro Venenoso", 27,"Nube Letal", 45, 0);
                 
                 //Dark Sorcerer
-                Villano darkSorcerer = new Villano("DARK SORCERER", 55, 40, 140,"Bola de Fuego Oscura", 34,"Rayo Maligno", 51,"Invocación de la Oscuridad", 85, 0);
+                Villano darkSorcerer = new Villano("DARK SORCERER", 55, 40, 140,"Bola de Fuego Oscura", 22,"Rayo Maligno", 33,"Invocación de la Oscuridad", 55, 0);
                 
-                //Oblivion Lord (Jefe Final)
-                Villano wolfYissus = new Villano("WOLF YISSUS", 60, 50, 180,"Garra del Vacío", 40,"Onda de Caos", 60,"Apocalipsis Oscuro", 100, 0);
+                //wolf yissus (Jefe Final)
+                Villano wolfYissus = new Villano("WOLF YISSUS", 60, 50, 180,"Garra del Vacío", 24,"Onda de Caos", 36,"Apocalipsis Oscuro", 60, 0);
                 
                 //definimos la carga de los poderes
                 charge carga = new charge(0, 30, 60);
@@ -1786,7 +1786,7 @@ public class App {
                         batalla = false;
                         break;
                     }
-                    
+
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
