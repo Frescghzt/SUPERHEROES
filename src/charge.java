@@ -19,7 +19,9 @@ public class charge {
 
     public static int carga(Random rand, int chargemax){
         int cargaAleatorio = rand.nextInt(chargemax) + 1;
-        return cargaAleatorio;
+        final int CargaMin = 5;
+        int cargaSalida= cargaAleatorio*CargaMin;
+        return cargaSalida;
 
     }
 }

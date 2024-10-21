@@ -546,13 +546,13 @@ public class App {
                     isShadowEsquiva = esquiva.isEsquivar(rand, shadowCrawler.velocidad);
                     
                     //definimos la carga del poder
-                    thecharge= charge.carga(rand, 40);
+                    thecharge= charge.carga(rand, 10);
 
                     //definimos la recuperacion de vida
                     sanacion = sanar.heal(rand, 40);
                     
                     //definimos el ataque
-                    respuesta =atack.respuesta(rand,10);
+                    respuesta =attack.respuesta(rand,20);
 
                     //contador para que no robe mas de un turno
                     int contador = 0;
@@ -670,7 +670,7 @@ public class App {
                         }
                         System.out.println("Ahora es turno de que "+shadowCrawler.nombre+" ataque");
                         //segun el numero aleatrio deside el ataque
-                        if (respuesta <= 2) {
+                        if (respuesta <= 3) {
                             System.out.println(shadowCrawler.nombre+" lanza su ataque final: "+shadowCrawler.nombreFinal);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
@@ -680,7 +680,7 @@ public class App {
                                 System.out.println(selectedHero.Snombre+" recibio el golpe");
                                 selectedHero.Svida_hp-=shadowCrawler.ataque_final;
                             }
-                        }else if (respuesta > 2 && respuesta <= 5 ) {
+                        }else if (respuesta > 3 && respuesta <= 10 ) {
                             System.out.println(shadowCrawler.nombre+" lanza "+shadowCrawler.nombreSecundario);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
@@ -858,13 +858,13 @@ public class App {
                     isIronEsquiva = esquiva.isEsquivar(rand, ironFist.velocidad);
                     
                     //definimos la carga del poder
-                    thecharge= charge.carga(rand, 40);
+                    thecharge= charge.carga(rand, 10);
 
                     //definimos la recuperacion de vida
                     sanacion = sanar.heal(rand, 40);
                     
                     //definimos el ataque
-                    respuesta =atack.respuesta(rand,10);
+                    respuesta =attack.respuesta(rand,20);
 
                     //contador para que no robe mas de un turno
                     int contador = 0;
@@ -970,7 +970,7 @@ public class App {
                     System.out.println("Ahora es turno de que "+ironFist.nombre+" ataque");
                     do {
                         //segun el numero aleatrio deside el ataque
-                        if (respuesta <= 2) {
+                        if (respuesta <= 3) {
                             System.out.println(ironFist.nombre+" lanza su ataque final: "+ironFist.nombreFinal);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
@@ -980,7 +980,7 @@ public class App {
                                 System.out.println(selectedHero.Snombre+" recibio el golpe");
                                 selectedHero.Svida_hp-=ironFist.ataque_final;
                             }
-                        }else if (respuesta > 2 && respuesta <= 5 ) {
+                        }else if (respuesta > 3 && respuesta <= 10) {
                             System.out.println(ironFist.nombre+" lanza "+ironFist.nombreSecundario);
                             if (isHeroEsquiva == true) {
                                 System.out.println("");
@@ -1128,13 +1128,13 @@ public class App {
                 isToxicEsquiva = esquiva.isEsquivar(rand, ironFist.velocidad);
                 
                 //definimos la carga del poder
-                thecharge= charge.carga(rand, 40);
+                thecharge= charge.carga(rand, 10);
 
                 //definimos la recuperacion de vida
                 sanacion = sanar.heal(rand, 40);
                 
                 //definimos el ataque
-                respuesta =atack.respuesta(rand,10);
+                respuesta =attack.respuesta(rand,20);
 
                 //contador para que no robe mas de un turno
                 int contador = 0;
@@ -1240,7 +1240,7 @@ public class App {
                 System.out.println("Ahora es turno de que "+toxicViper.nombre+" ataque");
                 do {
                     //segun el numero aleatrio deside el ataque
-                    if (respuesta <= 2) {
+                    if (respuesta <= 3) {
                         System.out.println(toxicViper.nombre+" lanza su ataque final: "+toxicViper.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1250,7 +1250,7 @@ public class App {
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
                             selectedHero.Svida_hp-=toxicViper.ataque_final;
                         }
-                    }else if (respuesta > 2 && respuesta <= 5 ) {
+                    }else if (respuesta > 3 && respuesta <= 10 ) {
                         System.out.println(toxicViper.nombre+" lanza "+toxicViper.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1390,13 +1390,13 @@ public class App {
                 isDarkEsquiva = esquiva.isEsquivar(rand, darkSorcerer.velocidad);
                 
                 //definimos la carga del poder
-                thecharge= charge.carga(rand, 40);
+                thecharge= charge.carga(rand, 10);
 
                 //definimos la recuperacion de vida
                 sanacion = sanar.heal(rand, 40);
                 
                 //definimos el ataque
-                respuesta =atack.respuesta(rand,10);
+                respuesta =attack.respuesta(rand,20);
 
                 //contador para que no robe mas de un turno
                 int contador = 0;
@@ -1502,7 +1502,7 @@ public class App {
                 System.out.println("Ahora es turno de que "+darkSorcerer.nombre+" ataque");
                 do {
                     //segun el numero aleatrio deside el ataque
-                    if (respuesta <= 2) {
+                    if (respuesta <= 3) {
                         System.out.println(darkSorcerer.nombre+" lanza su ataque final: "+darkSorcerer.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1512,7 +1512,7 @@ public class App {
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
                             selectedHero.Svida_hp-=darkSorcerer.ataque_final;
                         }
-                    }else if (respuesta > 2 && respuesta <= 5 ) {
+                    }else if (respuesta > 3 && respuesta <= 10 ) {
                         System.out.println(darkSorcerer.nombre+" lanza "+darkSorcerer.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1631,13 +1631,13 @@ public class App {
                 isOblivionEsquiva = esquiva.isEsquivar(rand, ironFist.velocidad);
                 
                 //definimos la carga del poder
-                thecharge= charge.carga(rand, 40);
+                thecharge= charge.carga(rand, 10);
 
                 //definimos la recuperacion de vida
                 sanacion = sanar.heal(rand, 40);
                 
                 //definimos el ataque
-                respuesta =atack.respuesta(rand,10);
+                respuesta =attack.respuesta(rand,20);
 
                 //contador para que no robe mas de un turno
                 int contador = 0;
@@ -1743,7 +1743,7 @@ public class App {
                 System.out.println("Ahora es turno de que "+wolfYissus.nombre+" ataque");
                 do {
                     //segun el numero aleatrio deside el ataque
-                    if (respuesta <= 2) {
+                    if (respuesta <= 3) {
                         System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
@@ -1753,7 +1753,7 @@ public class App {
                             System.out.println(selectedHero.Snombre+" recibio el golpe");
                             selectedHero.Svida_hp-=wolfYissus.ataque_final;
                         }
-                    }else if (respuesta > 2 && respuesta <= 5 ) {
+                    }else if (respuesta > 3 && respuesta <= 10 ) {
                         System.out.println(wolfYissus.nombre+" lanza "+wolfYissus.nombreSecundario);
                         if (isHeroEsquiva == true) {
                             System.out.println("");
