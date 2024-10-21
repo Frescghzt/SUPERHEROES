@@ -969,6 +969,18 @@ public class App {
                     }
                     System.out.println("Ahora es turno de que "+ironFist.nombre+" ataque");
                     do {
+                        if (shadowCrawler.vida_hp <= 0) {
+                            System.out.println("has ganado");
+                            batalla = false;
+                            break;
+                        }else if (selectedHero.Svida_hp <=0) {
+                            System.out.println("Has perdido");
+                            gameOver = true;
+                            batalla = false;
+                            break;
+                        }
+
+
                         //segun el numero aleatrio deside el ataque
                         if (respuesta <= 3) {
                             System.out.println(ironFist.nombre+" lanza su ataque final: "+ironFist.nombreFinal);
@@ -1239,6 +1251,17 @@ public class App {
                 }
                 System.out.println("Ahora es turno de que "+toxicViper.nombre+" ataque");
                 do {
+                    if (shadowCrawler.vida_hp <= 0) {
+                        System.out.println("has ganado");
+                        batalla = false;
+                        break;
+                    }else if (selectedHero.Svida_hp <=0) {
+                        System.out.println("Has perdido");
+                        gameOver = true;
+                        batalla = false;
+                        break;
+                    }
+
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(toxicViper.nombre+" lanza su ataque final: "+toxicViper.nombreFinal);
@@ -1501,6 +1524,17 @@ public class App {
                 }
                 System.out.println("Ahora es turno de que "+darkSorcerer.nombre+" ataque");
                 do {
+                    if (shadowCrawler.vida_hp <= 0) {
+                        System.out.println("has ganado");
+                        batalla = false;
+                        break;
+                    }else if (selectedHero.Svida_hp <=0) {
+                        System.out.println("Has perdido");
+                        gameOver = true;
+                        batalla = false;
+                        break;
+                    }
+
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(darkSorcerer.nombre+" lanza su ataque final: "+darkSorcerer.nombreFinal);
@@ -1742,6 +1776,17 @@ public class App {
                 }
                 System.out.println("Ahora es turno de que "+wolfYissus.nombre+" ataque");
                 do {
+                    if (shadowCrawler.vida_hp <= 0) {
+                        System.out.println("has ganado");
+                        batalla = false;
+                        break;
+                    }else if (selectedHero.Svida_hp <=0) {
+                        System.out.println("Has perdido");
+                        gameOver = true;
+                        batalla = false;
+                        break;
+                    }
+                    
                     //segun el numero aleatrio deside el ataque
                     if (respuesta <= 3) {
                         System.out.println(wolfYissus.nombre+" lanza su ataque final: "+wolfYissus.nombreFinal);
