@@ -1,40 +1,18 @@
-public class Villano {
-    String nombre;
-    int fuerza;
-    int velocidad;
-    int vida_hp;
-    String nombrePrincipal;
-    int ataque_principal;
-    String nombreSecundario;
-    int ataque_secundario;
-    String nombreFinal;
-    int ataque_final;
-    int overload;
-    
+class Villano extends Personaje{
 
     public Villano(
-            String nombre,
-            int fuerza,
-            int velocidad,
-            int vida_hp,
-            String nombrePrincipal,
-            int ataque_principal,
-            String nombreSecundario,
-            int ataque_secundario,
-            String nombreFinal,
-            int ataque_final,
-            int overload) {
-            this.nombre = nombre;
-            this.fuerza = fuerza;
-            this.velocidad = velocidad;
-            this.vida_hp = vida_hp;
-            this.nombrePrincipal = nombrePrincipal;
-            this.ataque_principal = ataque_principal;
-            this.nombreSecundario = nombreSecundario;
-            this.ataque_secundario = ataque_secundario;
-            this.nombreFinal = nombreFinal;
-            this.ataque_final = ataque_final;
-            this.overload = overload;
-        }
+        String nombre,
+        int fuerza,
+        int velocidad,
+        int vida_hp,
+        String nombrePrincipal,
+        int ataque_principal,
+        String nombreSecundario,
+        int ataque_secundario,
+        String nombreFinal,
+        int ataque_final,
+        int overload ){
+            super(nombre, fuerza, velocidad, vida_hp, nombrePrincipal, ataque_principal, nombreSecundario, ataque_secundario, nombreFinal, ataque_final, overload);
     }
 
+}

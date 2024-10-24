@@ -1,13 +1,13 @@
 import java.util.Random;
 
-public class charge {
+public class Charge {
     int chargePrincipal;
     int chargeSecundario;
     int chargeFinal;
     
     
     
-    public charge(
+    public Charge(
         int chargePrincipal,
         int chargeSecundario,
         int chargeFinal){
@@ -25,3 +25,4 @@ public class charge {
 
     }
 }
+

@@ -1,5 +1,6 @@
 import java.util.Random;
-public class esquiva {
+
+class Esquiva {
     public static boolean isEsquivar(Random rand, int velocidad){
         int menosProbabilidad = 4;
         int probabilidadEsquivar = Math.min(100, velocidad/menosProbabilidad);
