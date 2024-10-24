@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Charge {
+class Charge {
     int chargePrincipal;
     int chargeSecundario;
     int chargeFinal;

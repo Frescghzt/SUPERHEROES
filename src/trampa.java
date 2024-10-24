@@ -1,6 +1,6 @@
 import java.util.Random;;
 
-public class Trampa {
+ class Trampa {
     
     public static boolean isTrampa(Random rand){
         int probabilidadTrampa = 5;

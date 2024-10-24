@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Sanar {
+ class Sanar {
 
     public static int heal(Random rand, int healMax ){
         int healAleatorio = rand.nextInt(healMax)+1;
