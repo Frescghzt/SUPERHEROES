@@ -286,11 +286,20 @@ public class Lore {
 
     public static void quinto(Scanner input, SuperHero selectedHero, Villano[] villano){
 
-        System.out.println("-Es increible lo que has logrado, yo solo seguia la profesia");
-            System.out.println("aquel que me derrote tendra el poder del vacio");
-            System.out.println("ahora te pertenece-");
-            System.out.println("despues de obtener el vacio lograste salir de la dimencion lograste entender el vacio");
-            System.out.println("y su potencial, utilizandolo para la ayuda de la humanidad");
+        System.out.println("-w:Es increible lo que has logrado, yo solo seguia la profesia");
+            System.out.println("-W:aquel que me derrote tendra el poder del vacio");
+            System.out.println("-w: ahora te pertenece-");
+            System.out.println("-Tu: ¡¡Espera!! ¿cual es este poder que ahora me ah sido dado?");
+            System.out.println("-W:No puedo decirtelo es tu deber buscar su potencial ahora,");
+            System.out.println("-W:pero lo que si debes saber es que eres parte de esta profecía");
+            System.out.println("-W:desde el momento en el que te incursaste en este camino y solo es el inicio...");
+            System.out.println("-W:...de los cinco mejores o peores años de tu vida, que de ti depende que sean solo esa cantidad y no mas");
+            System.out.println("-W: puede que nos encontremos mas adelante en el camino y ya no como contrincantes");
+            System.out.println("-W: sino como amigos y compañeros");
+            System.out.println("-W: HAPPY CODING (chasquea los dedos)");
+            System.out.println("Luego de esto despertaste saliendo de la dimensión, pero recuerda");
+            System.out.println("nada fue un sueño...y una nueva misión se encuentra en tus hombros...");
+            System.out.println("¿estas dispuesto a continuar?");
             System.out.println("██╗    ██╗██╗███╗   ██╗███╗   ██╗███████╗██████╗ ");
             System.out.println("██║    ██║██║████╗  ██║████╗  ██║██╔════╝██╔══██╗");
             System.out.println("██║ █╗ ██║██║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝");
