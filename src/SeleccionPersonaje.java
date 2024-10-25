@@ -14,7 +14,7 @@ public class SeleccionPersonaje {
 
             //menu de personajes
             System.out.println("");
-            System.out.println("INGRESE EL CODIGO DEL PERSONAJE QUE DESEA VER LAS CARACTERISTICAS");
+            System.out.println("\u001B[0m"+"INGRESE EL CODIGO DEL PERSONAJE QUE DESEA VER LAS CARACTERISTICAS");
             System.out.println("1. SPEED FLASH");
             System.out.println("2. IRON HAMMER");
             System.out.println("3. SILENT SHADOW");
