@@ -2,8 +2,36 @@ import java.util.Scanner;
 
 public class Lore {
 
-    public static void introduccion(Scanner input, SuperHero selectedHero ) {
+    public static void cargando(){
+        System.out.print("\u001B[34m"+"Cargando");
+        String[] cargando = {
+            
+            "..."
+
+    };
+        try{
+            for (String linea : cargando) {
+                if (linea.isEmpty()) {
+                    System.out.println();
+                    Thread.sleep(1000);
+                    continue;
+                }
+
+                for (char c : linea.toCharArray()) {
+                    System.out.print(c);
+                    Thread.sleep(500); // Ajusta este valor para cambiar la velocidad de escritura
+                }
+                System.out.println();
+                Thread.sleep(200); // Pausa entre líneas
+            }
+        }catch(InterruptedException error){
+            error.printStackTrace();
+        }
         
+    }
+
+    public static void introduccion(Scanner input, SuperHero selectedHero ) {
+        System.out.println("\033[2J");
         //primera parte dialogo
         String[] primeraParte ={"Un antiguo mal ha despertado y la oscuridad comienza a extenderse por el mundo. Los villanos más","peligrosos han escapado de sus prisiones y ahora amenazan con sumir al planeta en el caos. Solo un","grupo de héroes con habilidades extraordinarias puede detenerlos y restaurar la paz."};
 

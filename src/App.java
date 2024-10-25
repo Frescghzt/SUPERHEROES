@@ -94,6 +94,9 @@ public class App {
             //carga, sancion y respuesta
             int theCharge, sanacion, respuesta;
 
+            //llamamos el efecto dramatico
+            Lore.cargando();
+
             //llamamos la introduccion de la historia
             Lore.introduccion(input, selectedHero);
 
