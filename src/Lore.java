@@ -237,7 +237,7 @@ public class Lore {
 
     public static void segundo(Scanner input, SuperHero selectedHero, Villano[] villano){
         System.out.println("\033[2J");
-        String[] primero ={"\u001B[31m"+"-JAJAAJJAJAJAJ, me has vencido felicidades, disfruta tu vistoria mientras puedas, porque de ","\u001B[0m"+selectedHero.nombre+" no le quedo otra alternativa mas que verlo morir. "+"\u001B[0m"
+        String[] primero ={"\u001B[31m"+"-JAJAAJJAJAJAJ, me has vencido felicidades, disfruta tu vistoria mientras puedas, porque de ","ahora en adelante no te tocara tan facil","\u001B[0m"+selectedHero.nombre+" no le quedo otra alternativa mas que verlo morir. "+"\u001B[0m"
 
         };
         try{
